@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import './Header.css'
 
 const Header = ({ currentPage = "PRE BUILD PC" }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const navigate = useNavigate()
 
   return (
     <>
@@ -30,7 +32,7 @@ const Header = ({ currentPage = "PRE BUILD PC" }) => {
         <div className="header-container">
           {/* Logo */}
           <div className="logo">
-            <a href="/" className="logo-text">techstore<span className="logo-highlight">.com</span></a>
+            <Link to="/" className="logo-text">techstore<span className="logo-highlight">.com</span></Link>
           </div>
 
           {/* Search Bar */}
@@ -93,7 +95,7 @@ const Header = ({ currentPage = "PRE BUILD PC" }) => {
       {/* Breadcrumb */}
       <div className="breadcrumb">
         <div className="breadcrumb-container">
-          <a href="/" className="breadcrumb-link">🏠</a>
+          <Link to="/" className="breadcrumb-link">🏠</Link>
           <span className="breadcrumb-separator">/</span>
           <span className="breadcrumb-current">{currentPage}</span>
         </div>

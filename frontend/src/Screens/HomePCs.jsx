@@ -1,10 +1,12 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import Header from '../Components/Header'
 import Footer from '../Components/Footer'
 import ProductCard from '../Widget/ProductCard'
 import './CategoryScreen.css'
 
 const HomePCs = () => {
+  const navigate = useNavigate()
   // Placeholder data for Home PC products
   const homeProducts = [
     {
