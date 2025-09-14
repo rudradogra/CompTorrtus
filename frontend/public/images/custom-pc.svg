@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+  <!-- Monitor -->
+  <rect x="40" y="30" width="120" height="70" rx="5" fill="#2c3e50" stroke="#34495e" stroke-width="2"/>
+  <rect x="45" y="35" width="110" height="60" rx="2" fill="#ecf0f1"/>
+  
+  <!-- Screen Content - Custom PC Builder Interface -->
+  <rect x="50" y="40" width="100" height="50" fill="#3498db"/>
+  <text x="100" y="60" text-anchor="middle" fill="white" font-size="8" font-family="Arial">CUSTOM BUILD</text>
+  <text x="100" y="72" text-anchor="middle" fill="white" font-size="6" font-family="Arial">CONFIGURATOR</text>
+  
+  <!-- Component Icons -->
+  <circle cx="70" cy="80" r="4" fill="#e74c3c"/>
+  <circle cx="85" cy="80" r="4" fill="#f39c12"/>
+  <circle cx="100" cy="80" r="4" fill="#27ae60"/>
+  <circle cx="115" cy="80" r="4" fill="#9b59b6"/>
+  <circle cx="130" cy="80" r="4" fill="#e67e22"/>
+  
+  <!-- Monitor Stand -->
+  <rect x="95" y="100" width="10" height="15" fill="#34495e"/>
+  <rect x="85" y="115" width="30" height="5" rx="2" fill="#34495e"/>
+  
+  <!-- PC Case -->
+  <rect x="15" y="60" width="25" height="50" rx="3" fill="#2c3e50" stroke="#34495e" stroke-width="1"/>
+  
+  <!-- PC Front Panel -->
+  <rect x="18" y="65" width="19" height="40" fill="#34495e"/>
+  <circle cx="27" cy="75" r="2" fill="#27ae60"/> <!-- Power LED -->
+  <circle cx="27" cy="85" r="1.5" fill="#e74c3c"/> <!-- HDD LED -->
+  <rect x="20" y="95" width="15" height="3" rx="1" fill="#95a5a6"/> <!-- Optical Drive -->
+  
+  <!-- Ventilation -->
+  <line x1="20" y1="100" x2="35" y2="100" stroke="#7f8c8d" stroke-width="0.5"/>
+  <line x1="20" y1="102" x2="35" y2="102" stroke="#7f8c8d" stroke-width="0.5"/>
+  <line x1="20" y1="104" x2="35" y2="104" stroke="#7f8c8d" stroke-width="0.5"/>
+  
+  <!-- Keyboard -->
+  <rect x="70" y="120" width="60" height="15" rx="2" fill="#34495e"/>
+  <rect x="72" y="122" width="56" height="11" fill="#2c3e50"/>
+  
+  <!-- Keys representation -->
+  <rect x="75" y="125" width="4" height="2" rx="0.5" fill="#95a5a6"/>
+  <rect x="81" y="125" width="4" height="2" rx="0.5" fill="#95a5a6"/>
+  <rect x="87" y="125" width="4" height="2" rx="0.5" fill="#95a5a6"/>
+  <rect x="93" y="125" width="4" height="2" rx="0.5" fill="#95a5a6"/>
+  <rect x="99" y="125" width="4" height="2" rx="0.5" fill="#95a5a6"/>
+  <rect x="105" y="125" width="4" height="2" rx="0.5" fill="#95a5a6"/>
+  <rect x="111" y="125" width="4" height="2" rx="0.5" fill="#95a5a6"/>
+  <rect x="117" y="125" width="4" height="2" rx="0.5" fill="#95a5a6"/>
+  <rect x="123" y="125" width="4" height="2" rx="0.5" fill="#95a5a6"/>
+  
+  <!-- Mouse -->
+  <ellipse cx="150" cy="125" rx="8" ry="12" fill="#34495e"/>
+  <ellipse cx="150" cy="125" rx="6" ry="10" fill="#2c3e50"/>
+  <line x1="150" y1="118" x2="150" y2="132" stroke="#95a5a6" stroke-width="0.5"/>
+  
+  <!-- Tools/Components (representing customization) -->
+  <rect x="165" y="50" width="25" height="20" rx="2" fill="#f39c12" opacity="0.8"/>
+  <text x="177" y="62" text-anchor="middle" fill="white" font-size="6" font-family="Arial">GPU</text>
+  
+  <rect x="165" y="75" width="25" height="15" rx="2" fill="#e74c3c" opacity="0.8"/>
+  <text x="177" y="85" text-anchor="middle" fill="white" font-size="6" font-family="Arial">CPU</text>
+  
+  <rect x="165" y="95" width="25" height="15" rx="2" fill="#27ae60" opacity="0.8"/>
+  <text x="177" y="105" text-anchor="middle" fill="white" font-size="6" font-family="Arial">RAM</text>
+  
+  <!-- Decorative elements -->
+  <circle cx="185" cy="25" r="3" fill="#3498db" opacity="0.6"/>
+  <circle cx="175" cy="30" r="2" fill="#9b59b6" opacity="0.6"/>
+  <circle cx="190" cy="35" r="2.5" fill="#e67e22" opacity="0.6"/>
+</svg>

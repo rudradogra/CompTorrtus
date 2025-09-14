@@ -1,0 +1,9 @@
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="200" fill="#5DADE2"/>
+  <rect x="50" y="40" width="200" height="120" fill="#3498DB" rx="10"/>
+  <rect x="70" y="60" width="160" height="80" fill="#2980B9" rx="5"/>
+  <rect x="90" y="80" width="120" height="40" fill="#85C1E9"/>
+  <circle cx="200" cy="50" r="8" fill="#1B4F72"/>
+  <rect x="180" y="110" width="40" height="20" fill="#AED6F1" rx="2"/>
+  <text x="150" y="180" text-anchor="middle" fill="white" font-family="Arial" font-size="16" font-weight="bold">Office PC</text>
+</svg>

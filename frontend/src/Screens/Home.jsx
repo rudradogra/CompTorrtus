@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import ProductCard from '../Widget/ProductCard'
 import './Home.css'
 
 function Home() {
@@ -102,8 +103,60 @@ function Home() {
       {/* Main Content */}
       <main className="main-content">
         <div className="container">
-          <h1>Welcome to TechStore</h1>
-          <p>Your one-stop destination for all tech needs!</p>
+          <h1>PRE BUILD PC</h1>
+          
+          {/* Product Cards Section */}
+          <div className="products-grid">
+            <ProductCard
+              title="Home PCs"
+              description="You can use a Home PC when you need to do basic operations. You will find three different price categories to proceed with."
+              buttonText="View All Products"
+              buttonAction={() => console.log('Home PCs clicked')}
+              imageUrl="/images/home-pc.svg"
+              imageAlt="Home PC illustration"
+              category="home"
+            />
+            
+            <ProductCard
+              title="Office PCs"
+              description="You can use an Office PC when there is a need for official operations to get done. You will find three different price categories to proceed with."
+              buttonText="View All Products"
+              buttonAction={() => console.log('Office PCs clicked')}
+              imageUrl="/images/office-pc.svg"
+              imageAlt="Office PC illustration"
+              category="office"
+            />
+            
+            <ProductCard
+              title="Gaming PCs"
+              description="This range of entry-level gaming PCs feature Radeon VEGA and NVIDIA GeForce GTX 1650 SUPER graphics. This makes them ideal for playing casual eSports games such as Fortnite, DOTA 2 and League of Le...."
+              buttonText="View All Products"
+              buttonAction={() => console.log('Gaming PCs clicked')}
+              imageUrl="/images/gaming-pc.svg"
+              imageAlt="Gaming PC illustration"
+              category="gaming"
+            />
+            
+            <ProductCard
+              title="Professional PCs"
+              description="Work on these workstations with no delay. These computers are designed for technical or scientific applications."
+              buttonText="View All Products"
+              buttonAction={() => console.log('Professional PCs clicked')}
+              imageUrl="/images/professional-pc.svg"
+              imageAlt="Professional PC illustration"
+              category="professional"
+            />
+            
+            <ProductCard
+              title="Custom PCs"
+              description="Build your dream PC with our custom configuration service. Choose your components and let us assemble the perfect machine for your specific needs and budget."
+              buttonText="Start Building"
+              buttonAction={() => console.log('Custom PCs clicked')}
+              imageUrl="/images/custom-pc.svg"
+              imageAlt="Custom PC illustration"
+              category="custom"
+            />
+          </div>
         </div>
       </main>
     </div>

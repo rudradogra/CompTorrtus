@@ -1,0 +1,8 @@
+<svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="200" fill="#4A90E2"/>
+  <rect x="50" y="50" width="200" height="100" fill="#357ABD" rx="10"/>
+  <rect x="70" y="70" width="160" height="60" fill="#2E6DA4" rx="5"/>
+  <circle cx="250" cy="40" r="15" fill="#1F4E79"/>
+  <rect x="80" y="80" width="120" height="40" fill="#87CEEB"/>
+  <text x="150" y="180" text-anchor="middle" fill="white" font-family="Arial" font-size="16" font-weight="bold">Home PC</text>
+</svg>
