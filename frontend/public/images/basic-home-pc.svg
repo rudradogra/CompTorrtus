@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" style="background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);">
+  <!-- Monitor -->
+  <rect x="50" y="35" width="100" height="60" rx="5" fill="#2d3436" stroke="#636e72" stroke-width="2"/>
+  <rect x="55" y="40" width="90" height="50" rx="2" fill="#ddd"/>
+  
+  <!-- Screen Content -->
+  <rect x="60" y="45" width="80" height="40" fill="#74b9ff"/>
+  <text x="100" y="62" text-anchor="middle" fill="white" font-size="8" font-family="Arial">HOME</text>
+  <text x="100" y="72" text-anchor="middle" fill="white" font-size="6" font-family="Arial">BASICS</text>
+  
+  <!-- Simple icons on screen -->
+  <circle cx="75" cy="80" r="3" fill="white" opacity="0.8"/>
+  <circle cx="90" cy="80" r="3" fill="white" opacity="0.8"/>
+  <circle cx="105" cy="80" r="3" fill="white" opacity="0.8"/>
+  <circle cx="120" cy="80" r="3" fill="white" opacity="0.8"/>
+  
+  <!-- Monitor Stand -->
+  <rect x="95" y="95" width="10" height="12" fill="#636e72"/>
+  <rect x="85" y="107" width="30" height="4" rx="2" fill="#636e72"/>
+  
+  <!-- Simple PC Tower -->
+  <rect x="25" y="70" width="20" height="35" rx="2" fill="#2d3436"/>
+  <rect x="27" y="75" width="16" height="25" fill="#636e72"/>
+  <circle cx="35" cy="82" r="1.5" fill="#00b894"/> <!-- Power LED -->
+  <rect x="29" y="90" width="12" height="2" rx="1" fill="#b2bec3"/> <!-- Drive -->
+  
+  <!-- Keyboard -->
+  <rect x="65" y="115" width="70" height="12" rx="2" fill="#636e72"/>
+  <rect x="67" y="117" width="66" height="8" fill="#2d3436"/>
+  
+  <!-- Mouse -->
+  <ellipse cx="160" cy="120" rx="6" ry="8" fill="#636e72"/>
+  
+  <!-- Home icon in corner -->
+  <polygon points="175,25 185,35 185,45 175,45 165,45 165,35" fill="#00b894" opacity="0.7"/>
+  <rect x="167" y="37" width="16" height="8" fill="#00b894" opacity="0.7"/>
+</svg>

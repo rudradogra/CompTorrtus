@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" style="background: linear-gradient(135deg, #fd79a8 0%, #e84393 100%);">
+  <!-- Monitor -->
+  <rect x="50" y="35" width="100" height="60" rx="5" fill="#2d3436" stroke="#636e72" stroke-width="2"/>
+  <rect x="55" y="40" width="90" height="50" rx="2" fill="#ddd"/>
+  
+  <!-- Screen Content - Family Entertainment -->
+  <rect x="60" y="45" width="80" height="40" fill="#fd79a8"/>
+  <text x="100" y="62" text-anchor="middle" fill="white" font-size="8" font-family="Arial">FAMILY</text>
+  <text x="100" y="72" text-anchor="middle" fill="white" font-size="6" font-family="Arial">ENTERTAINMENT</text>
+  
+  <!-- Media icons -->
+  <polygon points="75,78 85,83 75,88" fill="white" opacity="0.8"/> <!-- Play button -->
+  <rect x="90" y="78" width="8" height="10" rx="1" fill="white" opacity="0.8"/> <!-- Video -->
+  <circle cx="110" cy="83" r="4" fill="white" opacity="0.8"/> <!-- Music -->
+  <polygon points="118,79 125,83 118,87" fill="white" opacity="0.8"/> <!-- Forward -->
+  
+  <!-- Monitor Stand -->
+  <rect x="95" y="95" width="10" height="12" fill="#636e72"/>
+  <rect x="85" y="107" width="30" height="4" rx="2" fill="#636e72"/>
+  
+  <!-- Enhanced PC Tower with better graphics -->
+  <rect x="25" y="65" width="22" height="40" rx="2" fill="#2d3436"/>
+  <rect x="27" y="70" width="18" height="30" fill="#636e72"/>
+  <circle cx="36" cy="78" r="2" fill="#fd79a8"/> <!-- Power LED -->
+  <circle cx="36" cy="85" r="1" fill="#00b894"/> <!-- Activity LED -->
+  <rect x="29" y="92" width="14" height="2" rx="1" fill="#b2bec3"/> <!-- DVD Drive -->
+  
+  <!-- Speakers -->
+  <rect x="20" y="110" width="8" height="15" rx="2" fill="#2d3436"/>
+  <rect x="172" y="110" width="8" height="15" rx="2" fill="#2d3436"/>
+  <circle cx="24" cy="117" r="2" fill="#636e72"/>
+  <circle cx="176" cy="117" r="2" fill="#636e72"/>
+  
+  <!-- Wireless Keyboard -->
+  <rect x="65" y="115" width="70" height="12" rx="2" fill="#636e72"/>
+  <rect x="67" y="117" width="66" height="8" fill="#2d3436"/>
+  
+  <!-- Wireless Mouse -->
+  <ellipse cx="160" cy="120" rx="6" ry="8" fill="#636e72"/>
+  
+  <!-- Family/entertainment icon -->
+  <circle cx="180" cy="30" r="8" fill="#fd79a8" opacity="0.7"/>
+  <polygon points="175,26 185,30 175,34" fill="white"/>
+</svg>

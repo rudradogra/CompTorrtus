@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" style="background: linear-gradient(135deg, #00b894 0%, #00a085 100%);">
+  <!-- Dual Monitor Setup -->
+  <rect x="35" y="30" width="60" height="45" rx="3" fill="#2d3436" stroke="#636e72" stroke-width="2"/>
+  <rect x="105" y="30" width="60" height="45" rx="3" fill="#2d3436" stroke="#636e72" stroke-width="2"/>
+  
+  <!-- Monitor Screens -->
+  <rect x="38" y="33" width="54" height="39" rx="2" fill="#ddd"/>
+  <rect x="108" y="33" width="54" height="39" rx="2" fill="#ddd"/>
+  
+  <!-- Left Screen Content - Spreadsheet -->
+  <rect x="42" y="37" width="46" height="31" fill="#00b894"/>
+  <text x="65" y="50" text-anchor="middle" fill="white" font-size="6" font-family="Arial">SPREADSHEET</text>
+  <!-- Grid lines -->
+  <line x1="45" y1="55" x2="85" y2="55" stroke="white" stroke-width="0.5" opacity="0.7"/>
+  <line x1="45" y1="60" x2="85" y2="60" stroke="white" stroke-width="0.5" opacity="0.7"/>
+  <line x1="55" y1="52" x2="55" y2="65" stroke="white" stroke-width="0.5" opacity="0.7"/>
+  <line x1="75" y1="52" x2="75" y2="65" stroke="white" stroke-width="0.5" opacity="0.7"/>
+  
+  <!-- Right Screen Content - Office Apps -->
+  <rect x="112" y="37" width="46" height="31" fill="#00b894"/>
+  <text x="135" y="50" text-anchor="middle" fill="white" font-size="6" font-family="Arial">OFFICE</text>
+  <text x="135" y="58" text-anchor="middle" fill="white" font-size="5" font-family="Arial">APPS</text>
+  <!-- Office icons -->
+  <rect x="120" y="60" width="6" height="6" rx="1" fill="white" opacity="0.8"/>
+  <rect x="130" y="60" width="6" height="6" rx="1" fill="white" opacity="0.8"/>
+  <rect x="140" y="60" width="6" height="6" rx="1" fill="white" opacity="0.8"/>
+  
+  <!-- Monitor Stands -->
+  <rect x="60" y="75" width="8" height="10" fill="#636e72"/>
+  <rect x="130" y="75" width="8" height="10" fill="#636e72"/>
+  <rect x="50" y="85" width="28" height="3" rx="1" fill="#636e72"/>
+  <rect x="120" y="85" width="28" height="3" rx="1" fill="#636e72"/>
+  
+  <!-- Professional PC Tower -->
+  <rect x="15" y="55" width="25" height="45" rx="3" fill="#2d3436"/>
+  <rect x="18" y="60" width="19" height="35" fill="#636e72"/>
+  <circle cx="27" cy="68" r="2" fill="#00b894"/> <!-- Power LED -->
+  <circle cx="27" cy="75" r="1" fill="#fd79a8"/> <!-- Activity LED -->
+  <rect x="20" y="82" width="15" height="2" rx="1" fill="#b2bec3"/> <!-- DVD Drive -->
+  <rect x="20" y="87" width="15" height="2" rx="1" fill="#b2bec3"/> <!-- Card Reader -->
+  
+  <!-- Ventilation -->
+  <line x1="20" y1="92" x2="35" y2="92" stroke="#95a5a6" stroke-width="0.5"/>
+  <line x1="20" y1="94" x2="35" y2="94" stroke="#95a5a6" stroke-width="0.5"/>
+  <line x1="20" y1="96" x2="35" y2="96" stroke="#95a5a6" stroke-width="0.5"/>
+  
+  <!-- Professional Keyboard -->
+  <rect x="55" y="105" width="90" height="15" rx="2" fill="#2d3436"/>
+  <rect x="57" y="107" width="86" height="11" fill="#636e72"/>
+  
+  <!-- Function keys -->
+  <rect x="60" y="110" width="4" height="3" rx="0.5" fill="#95a5a6"/>
+  <rect x="66" y="110" width="4" height="3" rx="0.5" fill="#95a5a6"/>
+  <rect x="72" y="110" width="4" height="3" rx="0.5" fill="#95a5a6"/>
+  <!-- Number pad -->
+  <rect x="125" y="110" width="15" height="8" rx="1" fill="#2d3436"/>
+  
+  <!-- Ergonomic Mouse -->
+  <ellipse cx="170" cy="115" rx="8" ry="10" fill="#2d3436"/>
+  <ellipse cx="170" cy="115" rx="6" ry="8" fill="#636e72"/>
+  
+  <!-- Office building icon -->
+  <rect x="175" y="25" width="20" height="25" rx="2" fill="#00b894" opacity="0.7"/>
+  <rect x="178" y="30" width="3" height="3" fill="white"/>
+  <rect x="184" y="30" width="3" height="3" fill="white"/>
+  <rect x="190" y="30" width="3" height="3" fill="white"/>
+  <rect x="178" y="36" width="3" height="3" fill="white"/>
+  <rect x="184" y="36" width="3" height="3" fill="white"/>
+  <rect x="190" y="36" width="3" height="3" fill="white"/>
+</svg>
