@@ -1,0 +1,77 @@
+// "use client";
+import Header from "@/components/layout/header/header";
+import Footer from "@/components/layout/footer/footer";
+import Spacer from "@/components/spacer/spacer";
+// import LandingPageHeading from "@/components/sections/landingPage/landingPageHeading";
+// import MainLayoutSection from "@/components/sections/landingPage/MainLayoutSection";
+// import AlignedImagesSection from "@/components/sections/landingPage/AlignedImagesSection";
+// import FinalCardImageSection from "@/components/sections/landingPage/FinalCardImageSection";
+import pagesData from "@/lib/pagesdata";
+import EnhancedLandingPageCard from "@/components/sections/landingPage/enhancedLandingPageCard/enhancedLandingPageCard";
+import { ResponsivePageContainer } from "@/components/common/responsivePageContainer/responsivePageContainer";
+import Link from "next/link";
+import { Metadata } from "next";
+import { getImagePath } from "@/utils/imageToCdn";
+
+export const metadata: Metadata = {
+  title: "Landing Page - Menoob",
+  description: "Explore Menoob's Themed Collections",
+  metadataBase: new URL("https://menoob.in/"),
+  openGraph: {
+    title: "Landing Page- Menoob",
+    description: "Explore Menoob's Themed Collections",
+    url: "https://www.menoob.in/landingPage",
+    images: [
+      {
+        url: getImagePath("/banner/banner.png"),
+        alt: "Landing Page Image",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Landing Page - Menoob",
+    description: "Explore Menoob's Themed Collections.",
+    images: [
+      {
+        url: getImagePath("/banner/banner.png"),
+        alt: "Landing Page Image",
+      },
+    ],
+  },
+};
+
+const LandingPage = () => {
+  return (
+    <div className="min-h-screen">
+      <Spacer />
+      <Header />
+      <ResponsivePageContainer>
+        <div className="grid grid-cols-1 custom-md:grid-cols-2 gap-8 ">
+          {pagesData.map((page) => (
+            <div key={page.id} className="h-full">
+              <Link
+                href={`/landingPage/${page.id}`}
+                passHref
+                className="block h-full"
+              >
+                <EnhancedLandingPageCard
+                  key={page.id}
+                  title={page.title}
+                  heroImageUrl={page.image1}
+                  heroImageAlt={page.image1Alt || page.title}
+                  metaDescription={page.meta_description}
+                />
+              </Link>
+            </div>
+          ))}
+        </div>
+      </ResponsivePageContainer>
+      <Spacer />
+
+      <Footer />
+    </div>
+  );
+};
+
+export default LandingPage;

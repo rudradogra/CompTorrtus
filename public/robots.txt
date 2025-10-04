@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://menoob.in/
+
+# Sitemaps
+Sitemap: https://menoob.in/sitemap.xml
