@@ -3,7 +3,7 @@ import { ResponsivePageContainer } from "@/components/common/responsivePageConta
 import SizeChart from "@/components/common/sizeChart/sizeChart";
 import useSizeChart from "@/hooks/useSizeChart";
 import { footerLinks, socialMediaLinks } from "@/lib/staticData";
-import { getBrandName, getBrandDisplayName } from "@/lib/contactUs/contactUs";
+import { getBrandName } from "@/lib/contactUs/contactUs";
 import { getImagePath } from "@/utils/imageToCdn";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,7 +12,7 @@ import React from "react";
 const Footer = () => {
   const { showSizeChart, openSizeChart, closeSizeChart } = useSizeChart();
   const brandName = getBrandName();
-  const brandDisplayName = getBrandDisplayName();
+
   
   return (
     <div className="border-t pt-12 border-strokeColor">

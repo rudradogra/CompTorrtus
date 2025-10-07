@@ -1,0 +1,125 @@
+{
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "lastUpdated": "June 2025",
+    "description": "Menoob (\"we,\" \"us,\" or \"our\") is committed to protecting your privacy. This policy explains how we collect, use, and share your information when you use our website https://menoob.in or interact with our brand.",
+    "sections": [
+      {
+        "title": "I. Information We Collect",
+        "type": "list",
+        "items": [
+          {
+            "content": "When you visit our website, we automatically collect information about your device, such as your IP address, browser type, time zone, and cookies. We also collect information about your browsing activity, such as the pages you view and the links you click."
+          },
+          {
+            "content": "When you make a purchase or attempt to make a purchase, we collect your name, billing/shipping address, payment information (but we DO NOT store credit card/debit card details), email address, and phone number."
+          },
+          {
+            "content": "We may collect information you provide through customer service interactions, surveys, or social media."
+          }
+        ]
+      },
+      {
+        "title": "II. How We Use Your Information",
+        "type": "list",
+        "items": [
+          {
+            "content": "Process payments, arrange shipping, and provide invoices/order confirmations."
+          },
+          {
+            "content": "Communicate with you, respond to inquiries, and provide support."
+          },
+          {
+            "content": "With your consent, send you information about new products, promotions, and other updates."
+          },
+          {
+            "content": "Analyze website traffic and usage to improve our website and your experience."
+          },
+          {
+            "content": "Screen for potential risk and fraud."
+          },
+          {
+            "content": "Comply with applicable laws and regulations."
+          }
+        ]
+      },
+      {
+        "title": "III. Sharing Your Information",
+        "type": "list",
+        "items": [
+          {
+            "content": "We share information with service providers who assist us with payment processing (Razorpay), shipping (Shiprocket/Xpressbees), and website analytics. We only share information necessary for them to perform their services."
+          },
+          {
+            "content": "We may disclose information to legal authorities if required by law or legal process."
+          },
+          {
+            "content": "In the event of a merger, acquisition, or sale of assets, your information may be transferred."
+          },
+          {
+            "content": "We may share information with other third parties with your explicit consent."
+          }
+        ]
+      },
+      {
+        "title": "IV. Cookies and Similar Technologies",
+        "type": "paragraph",
+        "content": "We use cookies and similar technologies to enhance your browsing experience, analyze website traffic, and personalize content. You can manage your cookie preferences through your browser settings."
+      },
+      {
+        "title": "V. Data Security",
+        "type": "paragraph",
+        "content": "We take reasonable measures to protect your information, but no method of transmission over the internet is completely secure."
+      },
+      {
+        "title": "VI. Data Retention",
+        "type": "paragraph",
+        "content": "We retain your information for as long as necessary to fulfill the purposes outlined in this policy or as required by law."
+      },
+      {
+        "title": "VII. Your Rights",
+        "type": "list",
+        "items": [
+          {
+            "content": "You can request access to or correction of your personal information."
+          },
+          {
+            "content": "You can opt-out of receiving marketing communications at any time by emailing us at mail@menoob.in with \"NO MARKETING\" or \"UNSUBSCRIBE\" in the subject line."
+          },
+          {
+            "content": "You can request removal of your data by emailing us at mail@menoob.in with \"REMOVE DATA\" in the subject line. Please include your full name, address, and email for verification. Note that we may retain certain data for order processing and legal compliance."
+          }
+        ]
+      },
+      {
+        "title": "VIII. Children's Privacy",
+        "type": "paragraph",
+        "content": "Our website is not intended for children under the age of 13."
+      },
+      {
+        "title": "IX. Changes to This Policy",
+        "type": "paragraph",
+        "content": "We may update this policy periodically. Changes will be posted on our website."
+      },
+      {
+        "title": "X. Governing Law and Jurisdiction",
+        "type": "paragraph",
+        "content": "This Privacy Policy shall be governed by, interpreted, and construed in accordance with the laws of India, without regard to its conflict of law principles. Any disputes, claims, or proceedings arising out of or in connection with this Privacy Policy shall be subject to the exclusive jurisdiction of the competent courts at Delhi, India."
+      },
+      {
+        "title": "Contact Us",
+        "type": "contact",
+        "content": "If you have any questions or concerns about this Privacy Policy, please contact us at:",
+        "contactInfo": {
+          "email": "mail@menoob.in",
+          "phone": "+91 8058818154"
+        }
+      },
+      {
+        "title": "Consent",
+        "type": "paragraph",
+        "content": "By using our website, you consent to the terms of this Privacy Policy."
+      }
+    ]
+  }
+}

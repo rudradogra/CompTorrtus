@@ -4,7 +4,7 @@ import SectionHeading from "@/components/common/sectionHeading/sectionHeading";
 import Footer from "@/components/layout/footer/footer";
 import Header from "@/components/layout/header/header";
 import Spacer from "@/components/spacer/spacer";
-import { getImagePath } from "@/utils/imageToCdn";
+
 import { getContactInfo } from "@/lib/contactUs/contactUs";
 import { getContactMetadata } from "@/lib/metadata";
 import { Metadata } from "next";

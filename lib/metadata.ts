@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { getBrandDisplayName, getContactInfo } from './contactUs/contactUs';
 import { getImagePath } from '@/utils/imageToCdn';
 import metadataData from './menoob/menoobMetadata.json';
-import { MetadataConfig, PageMetadata } from './contactUs/metadata.types';
+import { MetadataConfig } from './contactUs/metadata.types';
 
 const typedMetadataData = metadataData as MetadataConfig;
 

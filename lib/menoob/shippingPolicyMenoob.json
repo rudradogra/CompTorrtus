@@ -1,0 +1,133 @@
+{
+  "shippingPolicy": {
+    "title": "Shipping Policy",
+    "lastUpdated": "June 2025",
+    "description": "Understand our shipping policy for a smooth delivery experience at Menoob.",
+    "sections": [
+      {
+        "title": "I. Shipping Options and Costs",
+        "type": "list",
+        "items": [
+          {
+            "content": "Shipping costs are calculated based on weight, destination, and shipping method. These costs will be displayed at checkout."
+          },
+          {
+            "content": "Free shipping may be offered for orders over a certain amount."
+          }
+        ]
+      },
+      {
+        "title": "II. Shipping Times",
+        "type": "list",
+        "items": [
+          {
+            "content": "Estimated delivery times are 5-7 Business days."
+          },
+          {
+            "content": "Delivery times are estimates and are not guaranteed."
+          },
+          {
+            "content": "Order processing time before shipment is typically 2-3 business days."
+          },
+          {
+            "content": "In some cases, orders containing multiple items may be shipped separately based on availability. You will not be charged extra for split shipments."
+          }
+        ]
+      },
+      {
+        "title": "III. Shipping Destinations",
+        "type": "list",
+        "items": [
+          {
+            "content": "We ship to all serviceable PIN codes within India, and also to international locations with added charges."
+          }
+        ]
+      },
+      {
+        "title": "IV. Order Tracking",
+        "type": "list",
+        "items": [
+          {
+            "content": "Once your order has shipped, you will receive a shipping confirmation email with a tracking number."
+          },
+          {
+            "content": "You can track your order on our website or the carrier's website."
+          }
+        ]
+      },
+      {
+        "title": "V. Delivery Issues",
+        "type": "list",
+        "items": [
+          {
+            "content": "Menoob is not responsible for lost or stolen packages."
+          },
+          {
+            "content": "If a package is undeliverable due to incorrect address, customer unavailability, or refusal to accept delivery, the order may be returned to us. In such cases, customers will be responsible for the cost of re-shipping. Refunds, if applicable, will exclude original shipping charges."
+          },
+          {
+            "content": "If you experience delivery issues, please contact the shipping carrier directly."
+          }
+        ]
+      },
+      {
+        "title": "VI. Customs and Duties (for International Shipping)",
+        "type": "list",
+        "items": [
+          {
+            "content": "International orders may be subject to customs duties and taxes levied by the destination country."
+          },
+          {
+            "content": "Customs clearance may cause delays beyond our original delivery estimate. Menoob is not responsible for customs delays, import duties, or taxes imposed by the destination country."
+          },
+          {
+            "content": "The customer is responsible for paying these fees."
+          }
+        ]
+      },
+      {
+        "title": "VII. Shipping Address",
+        "type": "list",
+        "items": [
+          {
+            "content": "Please ensure that your shipping address is accurate and complete."
+          },
+          {
+            "content": "We are not responsible for packages delivered to incorrect addresses."
+          }
+        ]
+      },
+      {
+        "title": "VIII. Shipping Delays",
+        "type": "list",
+        "items": [
+          {
+            "content": "Shipping delays may occur due to unforeseen circumstances including weather conditions, strikes, lockdowns, or courier service disruptions. Menoob will not be liable for any losses or inconvenience caused by such delays."
+          },
+          {
+            "content": "We will do our best to keep you informed of any delays."
+          }
+        ]
+      },
+      {
+        "title": "IX. Force Majeure",
+        "type": "paragraph",
+        "content": "MeNoob shall not be held liable for any delay or failure to deliver resulting from causes beyond its reasonable control, including but not limited to acts of God, war, terrorism, pandemics, supply chain disruptions, or government restrictions."
+      },
+      {
+        "title": "X. Governing Law & Jurisdiction",
+        "type": "paragraph",
+        "content": "All claims, disputes, or controversies arising out of or in connection with shipping, delivery, or logistics shall be governed by and construed in accordance with the laws of India. The courts of competent jurisdiction at Delhi shall have exclusive jurisdiction over all such matters, to the exclusion of all other courts or tribunals."
+      },
+      {
+        "title": "XI. Contact Information",
+        "type": "contact",
+        "content": "For shipping inquiries, please contact us at:",
+        "contactInfo": {
+          "email": "mail@menoob.in",
+          "phone": null
+        }
+      }
+    ]
+  }
+}

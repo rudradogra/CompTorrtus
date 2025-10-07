@@ -1,6 +1,6 @@
 import React from 'react';
 import PolicyContent from '@/components/common/policyContent/PolicyContent';
-import { getCancellationAndRefundMetadata } from '@/lib/menoob/menoobPolicies';
+import { getCancellationAndRefundMetadata } from '@/lib/contactUs/policies';
 
 export const metadata = getCancellationAndRefundMetadata();
 

@@ -1,0 +1,109 @@
+{
+  "returnAndExchange": {
+    "title": "Return & Exchange Policy",
+    "lastUpdated": "June 2025",
+    "description": "Understand our return and exchange policy to ensure a hassle-free shopping experience at Menoob.",
+    "sections": [
+      {
+        "title": "I. Return Eligibility",
+        "type": "list",
+        "items": [
+          {
+            "content": "You may request a return within 7 days of delivery."
+          },
+          {
+            "content": "Products must be:",
+            "subItems": [
+              "Unused and unwashed",
+              "In original condition and packaging",
+              "With all original tags and labels intact"
+            ]
+          },
+          {
+            "content": "Items marked as \"Final Sale\" or \"Non-returnable\" are not eligible for return or exchange."
+          }
+        ]
+      },
+      {
+        "title": "II. Exchange Policy",
+        "type": "list",
+        "items": [
+          {
+            "content": "Exchanges are allowed only for size or defective product issues."
+          },
+          {
+            "content": "Exchange requests must be raised within 7 days of delivery."
+          },
+          {
+            "content": "Exchanges are subject to stock availability."
+          }
+        ]
+      },
+      {
+        "title": "III. How to Request a Return or Exchange",
+        "type": "list",
+        "items": [
+          {
+            "content": "Email us at **mail@menoob.in** with:",
+            "subItems": [
+              "Order Number",
+              "Reason for return/exchange",
+              "Clear photo of the product (if damaged/defective)"
+            ]
+          },
+          {
+            "content": "Our team will review and respond within 2–3 business days."
+          }
+        ]
+      },
+      {
+        "title": "IV. Return Shipping",
+        "type": "list",
+        "items": [
+          {
+            "content": "For defective or wrong items: We will cover return shipping."
+          },
+          {
+            "content": "For other reasons (e.g., size, preference): Customer bears the return shipping cost."
+          }
+        ]
+      },
+      {
+        "title": "V. Refund Process",
+        "type": "list",
+        "items": [
+          {
+            "content": "Approved returns will be refunded via Razorpay to the original payment method within 7–10 business days of receiving and verifying the returned product."
+          },
+          {
+            "content": "Shipping charges are non-refundable unless the product is defective."
+          }
+        ]
+      },
+      {
+        "title": "VI. Miscellaneous",
+        "type": "list",
+        "items": [
+          {
+            "content": "Menoob reserves the right to deny a return if the returned product doesn't meet the eligibility criteria."
+          },
+          {
+            "content": "Products sent back without approval will not be processed."
+          },
+          {
+            "content": "In case of multiple size/return requests from the same customer, we may limit future return eligibility."
+          }
+        ]
+      },
+      {
+        "title": "Contact Us",
+        "type": "contact",
+        "content": "For any questions regarding returns and exchanges, please contact us:",
+        "contactInfo": {
+          "email": "mail@menoob.in",
+          "phone": "+91 8058818154"
+        }
+      }
+    ]
+  }
+}

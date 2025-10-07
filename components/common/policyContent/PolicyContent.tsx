@@ -1,5 +1,5 @@
 import React from 'react';
-import { PolicyData, PolicySection, getCancellationAndRefundPolicy } from '@/lib/menoob/menoobPolicies';
+import { PolicyData, PolicySection, getCancellationAndRefundPolicy, getPrivacyPolicy, getReturnAndExchangePolicy, getShippingPolicy, getTermsAndConditions } from '@/lib/contactUs/policies';
 import ThreeDLogo from '@/components/common/3dlogo/ThreeDLogo';
 import Header from '@/components/layout/header/header';
 import Spacer from '@/components/spacer/spacer';
@@ -17,6 +17,14 @@ const PolicyContent: React.FC<PolicyContentProps> = ({ policyType }) => {
     switch (policyType) {
       case 'cancellationAndRefund':
         return getCancellationAndRefundPolicy();
+      case 'privacyPolicy':
+        return getPrivacyPolicy();
+      case 'returnAndExchange':
+        return getReturnAndExchangePolicy();
+      case 'shippingPolicy':
+        return getShippingPolicy();
+      case 'termsAndConditions':
+        return getTermsAndConditions();
       default:
         throw new Error(`Unknown policy type: ${policyType}`);
     }
@@ -81,6 +89,29 @@ const PolicyContent: React.FC<PolicyContentProps> = ({ policyType }) => {
                 </li>
               ))}
             </ul>
+          </div>
+        );
+
+      case 'contact':
+        return (
+          <div key={index}>
+            <h2 className="font-ibm-plex-mono text-text-md-medium text-white mt-8 mb-2">
+              {section.title}
+            </h2>
+            <p className="font-ibm-plex-mono text-text-md-regular text-textSecondary mb-4">
+              {section.content}
+            </p>
+            {section.contactInfo && (
+              <p className="font-ibm-plex-mono text-text-md-regular text-textSecondary">
+                <strong>Email:</strong> {section.contactInfo.email}
+                {section.contactInfo.phone && (
+                  <>
+                    {' '}<br />
+                    <strong>Contact Number:</strong> {section.contactInfo.phone}
+                  </>
+                )}
+              </p>
+            )}
           </div>
         );
 
