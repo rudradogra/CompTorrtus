@@ -8,33 +8,34 @@ import Footer from "@/components/layout/footer/footer";
 import { getProducts } from "@/firebaseConfig/firebaseConfig";
 import { Metadata } from "next";
 import { getImagePath } from "@/utils/imageToCdn";
-import { getWebsiteUrl } from "@/lib/contactUs/contactUs";
+import { getWebsiteUrl, getBrandDisplayName } from "@/lib/contactUs/contactUs";
 
 export async function generateMetadata(): Promise<Metadata> {
   const baseUrl = getWebsiteUrl();
+  const brandName = getBrandDisplayName();
   return {
-    title: "Latest Products - Menoob",
-    description: "Explore our latest collection of products at Menoob.",
+    title: `Latest Products - ${brandName}`,
+    description: `Explore our latest collection of products at ${brandName}.`,
     metadataBase: new URL(baseUrl),
     openGraph: {
-      title: "Products - Menoob",
-      description: "Explore our latest collection of products at Menoob.",
+      title: `Products - ${brandName}`,
+      description: `Explore our latest collection of products at ${brandName}.`,
       url: `${baseUrl}/products`,
       images: [
         {
           url: getImagePath("/common/group/1.jpg"),
-          alt: "Menoob Group Image with Products",
+          alt: `${brandName} Group Image with Products`,
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Latest Products | Menoob",
-      description: "Explore our latest collection of products at Menoob.",
+      title: `Latest Products | ${brandName}`,
+      description: `Explore our latest collection of products at ${brandName}.`,
       images: [
         {
           url: getImagePath("/common/group/1.jpg"),
-          alt: "Menoob Group Image with Products",
+          alt: `${brandName} Group Image with Products`,
         },
       ],
     },

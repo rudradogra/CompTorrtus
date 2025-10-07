@@ -10,7 +10,7 @@ import { Product } from "@/lib/productTypes";
 import { getProduct, getProducts } from "@/firebaseConfig/firebaseConfig";
 import ThreeDLogo from "@/components/common/3dlogo/ThreeDLogo";
 import { getImagePath } from "@/utils/imageToCdn";
-import { getWebsiteUrl } from "@/lib/contactUs/contactUs";
+import { getWebsiteUrl, getBrandDisplayName } from "@/lib/contactUs/contactUs";
 
 type Props = {
   params: Promise<{ productId: string }>;
@@ -20,6 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { productId } = await params;
   const products = await getProducts();
   const baseUrl = getWebsiteUrl();
+  const brandName = getBrandDisplayName();
 
   const product = products.find(
     (item) =>
@@ -31,7 +32,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   if (!product) {
     return {
-      title: "Product Not Found - Menoob",
+      title: `Product Not Found - ${brandName}`,
     };
   }
 
