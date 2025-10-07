@@ -1,0 +1,16 @@
+{
+  "about": {
+    "title": "ABOUT US",
+    "icon": "/common/flame.svg",
+    "image": {
+      "src": "/common/aboutImg.jpg",
+      "alt": "About Us"
+    },
+    "content": {
+      "paragraphs": [
+        "At Menoob, we're not just a brand; we're a community of gamers. Founded by three engineers who've spent years bonding over online games, we understand the highs and lows, the victories and losses that shape every gamer's journey. After realizing there was no merchandise that truly captured the essence of our world, we decided to create something for gamers, by gamers. From streetwear to tech-infused innovations, we're committed to bringing you products that speak your language and reflect your true identity.",
+        "We're here to support and celebrate the gaming community, making it stronger and prouder. Menoob isn't just about wearing a brand; it's about wearing your gamer spirit on your sleeve. Whether you're repping your favorite game or simply embracing your gamer roots, we've got you covered. Welcome to Menoob —A Gamer's True Identity."
+      ]
+    }
+  }
+}
