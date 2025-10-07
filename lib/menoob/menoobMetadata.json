@@ -1,0 +1,56 @@
+{
+  "pages": {
+    "home": {
+      "title": "Home",
+      "description": "Menoob - A gamer's true identity. Discover exclusive gaming apparel and accessories.",
+      "path": "/",
+      "image": "/banner/banner.png"
+    },
+    "landingPage": {
+      "title": "Landing Page",
+      "description": "Explore Menoob's Themed Collections",
+      "path": "/landingPage",
+      "image": "/banner/banner.png"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "Get in touch with Menoob for inquiries, support, and more.",
+      "path": "/contact",
+      "image": "/banner/banner.png"
+    },
+    "profile": {
+      "title": "Profile",
+      "description": "Manage your Menoob account, orders, and preferences.",
+      "path": "/profile",
+      "image": "/banner/banner.png"
+    },
+    "products": {
+      "title": "Latest Collection",
+      "description": "Explore our latest collection of gaming merchandise at Menoob.",
+      "path": "/products",
+      "image": "/banner/banner.png"
+    },
+    "login": {
+      "title": "Login",
+      "description": "Login to your Menoob account to access exclusive features and manage your orders.",
+      "path": "/login",
+      "image": "/banner/banner.png"
+    },
+    "signup": {
+      "title": "Sign Up",
+      "description": "Create your Menoob account to unlock exclusive gaming merchandise and personalized shopping experience.",
+      "path": "/signup",
+      "image": "/banner/banner.png"
+    },
+    "admin": {
+      "title": "Admin Dashboard",
+      "description": "Menoob Admin Panel - Manage products, orders, and site content.",
+      "path": "/admin",
+      "image": "/banner/banner.png"
+    }
+  },
+  "defaults": {
+    "image": "/banner/banner.png",
+    "twitterCard": "summary_large_image"
+  }
+}

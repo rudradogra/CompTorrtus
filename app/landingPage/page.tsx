@@ -11,35 +11,9 @@ import EnhancedLandingPageCard from "@/components/sections/landingPage/enhancedL
 import { ResponsivePageContainer } from "@/components/common/responsivePageContainer/responsivePageContainer";
 import Link from "next/link";
 import { Metadata } from "next";
-import { getImagePath } from "@/utils/imageToCdn";
+import { getLandingPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Landing Page - Menoob",
-  description: "Explore Menoob's Themed Collections",
-  metadataBase: new URL("https://menoob.in/"),
-  openGraph: {
-    title: "Landing Page- Menoob",
-    description: "Explore Menoob's Themed Collections",
-    url: "https://www.menoob.in/landingPage",
-    images: [
-      {
-        url: getImagePath("/banner/banner.png"),
-        alt: "Landing Page Image",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Landing Page - Menoob",
-    description: "Explore Menoob's Themed Collections.",
-    images: [
-      {
-        url: getImagePath("/banner/banner.png"),
-        alt: "Landing Page Image",
-      },
-    ],
-  },
-};
+export const metadata: Metadata = getLandingPageMetadata();
 
 const LandingPage = () => {
   return (

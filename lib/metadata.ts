@@ -1,15 +1,19 @@
 import { Metadata } from 'next';
 import { getBrandDisplayName, getContactInfo } from './contactUs/contactUs';
 import { getImagePath } from '@/utils/imageToCdn';
+import metadataData from './menoob/menoobMetadata.json';
+import { MetadataConfig, PageMetadata } from './contactUs/metadata.types';
 
-interface MetadataConfig {
+const typedMetadataData = metadataData as MetadataConfig;
+
+interface MetadataOptions {
   title: string;
   description: string;
   path?: string;
   image?: string;
 }
 
-export const generateMetadata = (config: MetadataConfig): Metadata => {
+export const generateMetadata = (config: MetadataOptions): Metadata => {
   const brandName = getBrandDisplayName();
   const contactInfo = getContactInfo();
   const baseUrl = contactInfo.website.url;
@@ -47,30 +51,51 @@ export const generateMetadata = (config: MetadataConfig): Metadata => {
   };
 };
 
+// Get page metadata from JSON configuration
+export const getPageMetadata = (pageKey: string): Metadata => {
+  const pageConfig = typedMetadataData.pages[pageKey];
+  if (!pageConfig) {
+    throw new Error(`Metadata not found for page: ${pageKey}`);
+  }
+  
+  return generateMetadata({
+    title: pageConfig.title,
+    description: pageConfig.description,
+    path: pageConfig.path,
+    image: pageConfig.image,
+  });
+};
+
 // Predefined metadata for common pages
 export const getHomeMetadata = (): Metadata => {
-  const brandName = getBrandDisplayName();
-  return generateMetadata({
-    title: "Home",
-    description: `${brandName} - A gamer's true identity. Discover exclusive gaming apparel and accessories.`,
-    path: "/",
-  });
+  return getPageMetadata('home');
 };
 
 export const getContactMetadata = (): Metadata => {
-  const brandName = getBrandDisplayName();
-  return generateMetadata({
-    title: "Contact Us",
-    description: `Get in touch with ${brandName} for inquiries, support, and more.`,
-    path: "/contact",
-  });
+  return getPageMetadata('contact');
 };
 
 export const getProfileMetadata = (): Metadata => {
-  const brandName = getBrandDisplayName();
-  return generateMetadata({
-    title: "Profile",
-    description: `Manage your ${brandName} account, orders, and preferences.`,
-    path: "/profile",
-  });
+  return getPageMetadata('profile');
+};
+
+// New helper functions for other pages
+export const getLandingPageMetadata = (): Metadata => {
+  return getPageMetadata('landingPage');
+};
+
+export const getProductsMetadata = (): Metadata => {
+  return getPageMetadata('products');
+};
+
+export const getLoginMetadata = (): Metadata => {
+  return getPageMetadata('login');
+};
+
+export const getSignupMetadata = (): Metadata => {
+  return getPageMetadata('signup');
+};
+
+export const getAdminMetadata = (): Metadata => {
+  return getPageMetadata('admin');
 };
