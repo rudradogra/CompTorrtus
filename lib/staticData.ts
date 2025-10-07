@@ -41,14 +41,6 @@ export const socialMediaLinks = (() => {
     });
   }
   
-  if (platforms.facebook) {
-    links.push({
-      title: "Facebook",
-      href: platforms.facebook.url, 
-      icon: "/icons/socialMediaIcons/facebook.svg",
-    });
-  }
-  
   if (platforms.twitter) {
     links.push({
       title: "Twitter",

@@ -9,7 +9,6 @@ export interface SocialMedia {
   description: string;
   platforms: {
     instagram: SocialMediaPlatform;
-    facebook: SocialMediaPlatform;
     twitter: SocialMediaPlatform;
     linkedin: SocialMediaPlatform;
   };
