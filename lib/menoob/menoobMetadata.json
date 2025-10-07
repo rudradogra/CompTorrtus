@@ -47,6 +47,18 @@
       "description": "Menoob Admin Panel - Manage products, orders, and site content.",
       "path": "/admin",
       "image": "/banner/banner.png"
+    },
+    "cancellationAndRefund": {
+      "title": "Cancellation and Refund Policy",
+      "description": "Understand our cancellation and refund policy for a seamless shopping experience at Menoob.",
+      "path": "/policies/cancellation-and-refund",
+      "image": "/banner/banner.png"
+    },
+    "cancellationAndRefundPolicy": {
+      "title": "Cancellation and Refund Policy",
+      "description": "Understand our cancellation and refund policy for a seamless shopping experience at Menoob.",
+      "path": "/policies/cancellation-and-refund-policy",
+      "image": "/banner/banner.png"
     }
   },
   "defaults": {

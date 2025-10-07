@@ -1,0 +1,100 @@
+{
+  "cancellationAndRefund": {
+    "title": "Cancellation and Refund Policy",
+    "lastUpdated": "June 2025",
+    "description": "At Menoob, we strive to provide our customers with a seamless shopping experience. However, we understand that sometimes plans change. Below is our cancellation and refund policy to ensure transparency and satisfaction.",
+    "sections": [
+      {
+        "title": "1. Cancellation Policy",
+        "type": "list",
+        "items": [
+          {
+            "title": "Order Cancellation Before Shipment:",
+            "content": "You can cancel your order within 24 hours of placing it. If you wish to cancel your order, please contact us immediately at **mail@menoob.in**. Once the order is processed and shipped, cancellations are not allowed."
+          },
+          {
+            "title": "Order Cancellation After Shipment:",
+            "content": "Once your order is dispatched via Shiprocket, cancellation is not possible. Please refer to our Return Policy if you wish to return the product after receiving it."
+          }
+        ]
+      },
+      {
+        "title": "2. Refund Policy",
+        "type": "list",
+        "items": [
+          {
+            "title": "Refunds for Cancelled Orders:",
+            "content": "If your order is successfully cancelled before it is shipped, a full refund will be issued. Refunds will be processed through Razorpay, our secure payment gateway, to the original mode of payment. Please allow up to 7-10 business days for the refund to reflect in your account."
+          },
+          {
+            "title": "Refunds for Returned Products:",
+            "content": "If you are unsatisfied with your purchase, we offer a 7-day return policy. To qualify for a refund, the product must be unused, in its original condition, and with the original tags intact. Once we receive the returned product and verify its condition, we will issue a refund to your Razorpay account within 7-10 business days."
+          },
+          {
+            "title": "Non-Refundable Items:",
+            "content": "Products marked as \"Final Sale\" or \"Non-returnable\" at the time of purchase are not eligible for refunds or returns."
+          }
+        ]
+      },
+      {
+        "title": "3. Refusal to Accept Delivery",
+        "type": "list",
+        "items": [
+          {
+            "content": "If a customer refuses to accept a confirmed delivery without prior intimation or a valid reason, shipping charges will be deducted, and refunds may not be issued."
+          }
+        ]
+      },
+      {
+        "title": "4. Shipping Costs",
+        "type": "list",
+        "items": [
+          {
+            "title": "Cancellation Before Shipment:",
+            "content": "Shipping costs are fully refundable if the order is cancelled before shipment."
+          },
+          {
+            "title": "Returns and Exchanges:",
+            "content": "In the case of a return, the customer will be responsible for return shipping costs unless the product is defective or damaged. For exchanges, please contact us for assistance."
+          }
+        ]
+      },
+      {
+        "title": "5. How to Request a Cancellation or Return",
+        "type": "mixed",
+        "description": "To initiate a cancellation, return, or refund request, please contact us via email at **mail@menoob.in** with the following details:",
+        "items": [
+          {
+            "content": "Order Number"
+          },
+          {
+            "content": "Reason for Cancellation/Return"
+          },
+          {
+            "content": "Proof of Purchase"
+          }
+        ]
+      },
+      {
+        "title": "6. Product Appearance Disclaimer",
+        "type": "paragraph",
+        "content": "While we strive to display product colors, textures, and dimensions as accurately as possible, minor variations may occur due to individual screen settings, lighting conditions, and manufacturing tolerances. Accordingly, slight differences in color, size, or finish shall not be deemed defects and will not constitute valid grounds for return, exchange, or refund. By placing an order, the customer acknowledges and accepts this limitation."
+      },
+      {
+        "title": "7. Dispute Resolution",
+        "type": "paragraph",
+        "content": "All disputes, claims, or controversies arising out of or in connection with cancellations, refunds, or related matters shall be subject to the exclusive jurisdiction of the competent courts at Delhi, to the exclusion of all other courts or forums, notwithstanding any contrary provision under applicable law."
+      },
+      {
+        "title": "8. How to Request a cancellation or return",
+        "type": "paragraph",
+        "content": "To initiate a cancellation, return, or refund request, please contact us via email at mail@menoob.in with the following details: • Order Number • Reason for Cancellation/Return • Proof of Purchase (Which includes order confirmation email, payment receipt, or screenshot of transaction details)"
+      },
+      {
+        "title": "9. Processing Time",
+        "type": "paragraph",
+        "content": "Once we receive your request, we will process it within 2-3 business days. Please note that depending on your bank or payment gateway (Razorpay), it may take 7-10 business days for the refund to reflect in your account."
+      }
+    ]
+  }
+}

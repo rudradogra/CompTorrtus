@@ -99,3 +99,11 @@ export const getSignupMetadata = (): Metadata => {
 export const getAdminMetadata = (): Metadata => {
   return getPageMetadata('admin');
 };
+
+export const getCancellationAndRefundMetadata = (): Metadata => {
+  return getPageMetadata('cancellationAndRefund');
+};
+
+export const getCancellationAndRefundPolicyMetadata = (): Metadata => {
+  return getPageMetadata('cancellationAndRefundPolicy');
+};
