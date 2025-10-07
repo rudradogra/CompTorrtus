@@ -12,36 +12,37 @@ import { useRouter } from "next/navigation";
 import type { OrderData } from "@/lib/type";
 import { Metadata } from "next";
 import { getImagePath } from "@/utils/imageToCdn";
-import { getWebsiteUrl } from "@/lib/contactUs/contactUs";
+import { getWebsiteUrl, getBrandDisplayName } from "@/lib/contactUs/contactUs";
 
 const baseUrl = getWebsiteUrl();
+const brandName = getBrandDisplayName();
 
 export const metadata: Metadata = {
-  title: "Order Details - Menoob",
+  title: `Order Details - ${brandName}`,
   description:
     "View your order details, track shipments, and manage returns or replacements.",
   metadataBase: new URL(baseUrl),
   openGraph: {
-    title: "Order Details - Menoob",
+    title: `Order Details - ${brandName}`,
     description:
       "View your order details, track shipments, and manage returns or replacements.",
     url: `${baseUrl}/profile/orderDetails`,
     images: [
       {
         url: getImagePath("/common/group/1.jpg"),
-        alt: "Menoob Group Image with Products",
+        alt: `${brandName} Group Image with Products`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Order Details - Menoob",
+    title: `Order Details - ${brandName}`,
     description:
       "View your order details, track shipments, and manage returns or replacements.",
     images: [
       {
         url: getImagePath("/common/group/1.jpg"),
-        alt: "Menoob Group Image with Products",
+        alt: `${brandName} Group Image with Products`,
       },
     ],
   },

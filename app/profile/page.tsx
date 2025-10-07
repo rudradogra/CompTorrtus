@@ -4,36 +4,37 @@ import Header from "@/components/layout/header/header";
 import { Metadata } from "next";
 import Profile from "@/components/sections/profile/profile";
 import { getImagePath } from "@/utils/imageToCdn";
-import { getWebsiteUrl } from "@/lib/contactUs/contactUs";
+import { getWebsiteUrl, getBrandDisplayName } from "@/lib/contactUs/contactUs";
 
 const baseUrl = getWebsiteUrl();
+const brandName = getBrandDisplayName();
 
 export const metadata: Metadata = {
-  title: "Profile - Menoob",
+  title: `Profile - ${brandName}`,
   description:
     "Manage your profile, view orders, update account details, and log out.",
   metadataBase: new URL(baseUrl),
   openGraph: {
-    title: "Profile - Menoob",
+    title: `Profile - ${brandName}`,
     description:
       "Manage your profile, view orders, update account details, and log out.",
     url: `${baseUrl}/profile`,
     images: [
       {
         url: getImagePath("/common/group/1.jpg"),
-        alt: "Menoob Group Image with Products",
+        alt: `${brandName} Group Image with Products`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Profile - Menoob",
+    title: `Profile - ${brandName}`,
     description:
       "Manage your profile, view orders, update account details, and log out.",
     images: [
       {
         url: getImagePath("/common/group/1.jpg"),
-        alt: "Menoob Group Image with Products",
+        alt: `${brandName} Group Image with Products`,
       },
     ],
   },

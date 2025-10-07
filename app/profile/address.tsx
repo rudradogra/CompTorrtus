@@ -8,35 +8,36 @@ import { getAddresses, updateAddress, deleteAddress } from "@/firebaseConfig/fir
 import { getAuth } from "firebase/auth";
 import { Metadata } from "next";
 import { getImagePath } from "@/utils/imageToCdn";
-import { getWebsiteUrl } from "@/lib/contactUs/contactUs";
+import { getWebsiteUrl, getBrandDisplayName } from "@/lib/contactUs/contactUs";
 
 const baseUrl = getWebsiteUrl();
+const brandName = getBrandDisplayName();
 
 export const metadata: Metadata = {
-  title: "Address Management - Menoob",
+  title: `Address Management - ${brandName}`,
   description:
     "Manage your addresses, add new ones, edit existing ones, and set defaults.",
   metadataBase: new URL(baseUrl),
   openGraph: {
-    title: "Address Management - Menoob",
+    title: `Address Management - ${brandName}`,
     description:
       "Manage your addresses, add new ones, edit existing ones, and set defaults.",
     url: `${baseUrl}/profile/address`,
     images: [
       {
         url: getImagePath("/common/group/1.jpg"),
-        alt: "Menoob Group Image with Products",
+        alt: `${brandName} Group Image with Products`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Address Management - Menoob",
+    title: `Address Management - ${brandName}`,
     description: "Manage your addresses, add new ones, edit existing ones, and set defaults.",
     images: [
       {
         url: getImagePath("/common/group/1.jpg"),
-        alt: "Menoob Group Image with Products",
+        alt: `${brandName} Group Image with Products`,
       },
     ],
   },

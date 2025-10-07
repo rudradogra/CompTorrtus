@@ -13,35 +13,36 @@ import { db } from "@/firebaseConfig/firebaseConfig";
 import { getAuth } from "firebase/auth";
 import { Metadata } from "next";
 import { getImagePath } from "@/utils/imageToCdn";
-import { getWebsiteUrl } from "@/lib/contactUs/contactUs";
+import { getWebsiteUrl, getBrandDisplayName } from "@/lib/contactUs/contactUs";
 
 const baseUrl = getWebsiteUrl();
+const brandName = getBrandDisplayName();
 
 export const metadata: Metadata = {
-  title: "Account Details - Menoob",
+  title: `Account Details - ${brandName}`,
   description:
     "Manage your account details, including email, name, and phone number.",
   metadataBase: new URL(baseUrl),
   openGraph: {
-    title: "Account Details - Menoob",
+    title: `Account Details - ${brandName}`,
     description:
       "Manage your account details, including email, name, and phone number.",
     url: `${baseUrl}/profile`,
     images: [
       {
         url: getImagePath("/common/group/1.jpg"),
-        alt: "Menoob Group Image with Products",
+        alt: `${brandName} Group Image with Products`,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Account Details - Menoob",
+    title: `Account Details - ${brandName}`,
     description: "Manage your account details, including email, name, and phone number.",
     images: [
       {
         url: getImagePath("/common/group/1.jpg"),
-        alt: "Menoob Group Image with Products",
+        alt: `${brandName} Group Image with Products`,
       },
     ],
   },
