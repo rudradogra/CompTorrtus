@@ -17,28 +17,34 @@ export const footerLinks = [
   // },
 ];
 
-export const socialMediaLinks = [
-  // {
-  //   title: "Facebook",
-  //   href: "/",
-  //   icon: "/static/icons/socialMediaIcons/facebook.svg",
-  // },
-  {
-    title: "Instagram",
-    href: "https://www.instagram.com/menoob.in/",
-    icon: "/icons/socialMediaIcons/instagram.svg",
-  },
-  {
-    title: "Linkedin",
-    href: "https://www.linkedin.com/company/menoob/",
-    icon: "/icons/socialMediaIcons/linkedin.svg",
-  },
-  // {
-  //   title: "Twitter",
-  //   href: "/",
-  //   icon: "/static/icons/socialMediaIcons/twitter.svg",
-  // },
-];
+import { getSocialMediaPlatforms } from './contactUs/contactUs';
+
+// Generate social media links from configuration
+export const socialMediaLinks = (() => {
+  const platforms = getSocialMediaPlatforms();
+  return [
+    {
+      title: "Instagram",
+      href: platforms.instagram.url,
+      icon: "/icons/socialMediaIcons/instagram.svg",
+    },
+    {
+      title: "Linkedin", 
+      href: platforms.linkedin.url,
+      icon: "/icons/socialMediaIcons/linkedin.svg",
+    },
+    {
+      title: "Facebook",
+      href: platforms.facebook.url, 
+      icon: "/icons/socialMediaIcons/facebook.svg",
+    },
+    {
+      title: "Twitter",
+      href: platforms.twitter.url,
+      icon: "/icons/socialMediaIcons/twitter.svg",
+    },
+  ];
+})();
 
 export const faqsData = [
   {

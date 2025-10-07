@@ -3,6 +3,7 @@ import { ResponsivePageContainer } from "@/components/common/responsivePageConta
 import SizeChart from "@/components/common/sizeChart/sizeChart";
 import useSizeChart from "@/hooks/useSizeChart";
 import { footerLinks, socialMediaLinks } from "@/lib/staticData";
+import { getBrandName, getBrandDisplayName } from "@/lib/contactUs/contactUs";
 import { getImagePath } from "@/utils/imageToCdn";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,6 +11,9 @@ import React from "react";
 // Test
 const Footer = () => {
   const { showSizeChart, openSizeChart, closeSizeChart } = useSizeChart();
+  const brandName = getBrandName();
+  const brandDisplayName = getBrandDisplayName();
+  
   return (
     <div className="border-t pt-12 border-strokeColor">
       <ResponsivePageContainer>
@@ -18,10 +22,10 @@ const Footer = () => {
             <div className="flex flex-col gap-10">
               <div className="flex flex-col gap-4">
                 <h2 className="text-[20px] font-semibold font-press-start-2p text-white">
-                  menoob
+                  {brandName}
                 </h2>
                 <p className="text-text-md-medium font-ibm-plex-mono text-textSecondary max-w-[368px]">
-                  Discover the latest trends in fashion with menoob. Shop our
+                  Discover the latest trends in fashion with {brandName}. Shop our
                   exclusive collection of clothing. Experience quality and style
                   like never before.
                 </p>

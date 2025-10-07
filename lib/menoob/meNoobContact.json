@@ -1,0 +1,58 @@
+{
+  "contact": {
+    "pageTitle": "Contact Us",
+    "description1": "We'd love to hear from you! Whether you have questions about our products, need assistance with an order, or just want to say hello, our team is here to help.",
+    "email": {
+      "title": "Email Us",
+      "description": "For any inquiries, please reach out to us at",
+      "address": "mail@menoob.in"
+    },
+    "address": {
+      "title": "Visit Us",
+      "description": "Our office is located at:",
+      "full": "Supertech Capetown, Sector 74, Noida, 201301, India."
+    },
+    "phone": {
+      "title": "Call Us",
+      "description": "If you prefer to speak directly, give us a call at",
+      "number": "+91 8058818154",
+      "additionalInfo": "We're available during business hours to assist you."
+    },
+    "socialMedia": {
+      "title": "Follow Us on Social Media",
+      "description": "Stay connected with us on social media for updates, new arrivals, and exciting offers.",
+      "platforms": {
+        "instagram": {
+          "handle": "@menoob.in",
+          "url": "https://instagram.com/menoob.in"
+        },
+        "facebook": {
+          "handle": "@menoob",
+          "url": "https://facebook.com/menoob"
+        },
+        "twitter": {
+          "handle": "@menoob_in",
+          "url": "https://twitter.com/menoob_in"
+        },
+        "linkedin": {
+          "handle": "menoob",
+          "url": "https://linkedin.com/company/menoob"
+        }
+      }
+    },
+    "website": {
+      "title": "Our Website",
+      "url": "https://www.menoob.in"
+    }
+  },
+  "brand": {
+    "name": "menoob",
+    "displayName": "Menoob",
+    "tagline": "Your Style, Your Statement"
+  },
+  "company": {
+    "legalName": "Menoob Private Limited",
+    "founded": "2024",
+    "location": "Noida, India"
+  }
+}

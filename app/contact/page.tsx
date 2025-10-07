@@ -5,38 +5,16 @@ import Footer from "@/components/layout/footer/footer";
 import Header from "@/components/layout/header/header";
 import Spacer from "@/components/spacer/spacer";
 import { getImagePath } from "@/utils/imageToCdn";
+import { getContactInfo } from "@/lib/contactUs/contactUs";
+import { getContactMetadata } from "@/lib/metadata";
 import { Metadata } from "next";
 import React from "react";
 
-export const metadata: Metadata = {
-  title: "Contact Us - Menoob",
-  description: "Get in touch with Menoob for inquiries, support, and more.",
-  metadataBase: new URL("https://menoob.in/"),
-  openGraph: {
-    title: "Contact Us - Menoob",
-    description: "Reach out to Menoob for any questions or support.",
-    url: "https://www.menoob.in/contact",
-    images: [
-      {
-        url: getImagePath("/banner/banner.png"),
-        alt: "Contact Us Image",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Contact Us - Menoob",
-    description: "Reach out to Menoob for any questions or support.",
-    images: [
-      {
-        url: getImagePath("/banner/banner.png"),
-        alt: "Contact Us Image",
-      },
-    ],
-  },
-};
+export const metadata: Metadata = getContactMetadata();
 
 const ContactUsPage = () => {
+  const config = getContactInfo();
+  
   return (
     <div>
       <ThreeDLogo />
@@ -45,69 +23,83 @@ const ContactUsPage = () => {
       <ResponsivePageContainer>
         <div className="">
           <div className="flex justify-center">
-            <SectionHeading title="Contact Us" />
+            <SectionHeading title={config.pageTitle} />
           </div>
           <Spacer />
           <p className="font-ibm-plex-mono text-text-md-regular text-textSecondary mb-4">
-            We&apos;d love to hear from you! Whether you have questions about
-            our products, need assistance with an order, or just want to say
-            hello, our team is here to help.
+            {config.description1}
           </p>
+          
+          {/* Email Section */}
           <h2 className="font-ibm-plex-mono text-text-md-medium text-white mt-8 mb-2">
-            Email Us
+            {config.email.title}
           </h2>
           <p className="font-ibm-plex-mono text-text-md-regular text-textSecondary mb-4">
-            For any inquiries, please reach out to us at{" "}
-            <a href="mailto:mail@menoob.in" className="underline text-blue-500">
-              mail@menoob.in
+            {config.email.description}{" "}
+            <a href={`mailto:${config.email.address}`} className="underline text-blue-500">
+              {config.email.address}
             </a>
             . We&apos;ll get back to you as soon as possible!
           </p>
+          
+          {/* Address Section */}
           <h2 className="font-ibm-plex-mono text-text-md-medium text-white mt-8 mb-2">
-            Visit Us
+            {config.address.title}
           </h2>
           <p className="font-ibm-plex-mono text-text-md-regular text-textSecondary mb-4">
-            Our office is located at:
+            {config.address.description}
             <br />
-            Supertech Capetown, Sector 74, Noida, 201301, India.
+            {config.address.full}
           </p>
+          
+          {/* Phone Section */}
           <h2 className="font-ibm-plex-mono text-text-md-medium text-white mt-8 mb-2">
-            Call Us
+            {config.phone.title}
           </h2>
           <p className="font-ibm-plex-mono text-text-md-regular text-textSecondary mb-4">
-            If you prefer to speak directly, give us a call at{" "}
-            <a href="tel:+918058818154" className="underline text-blue-500">
-              +91 8058818154.
+            {config.phone.description}{" "}
+            <a href={`tel:${config.phone.number.replace(/\s/g, '')}`} className="underline text-blue-500">
+              {config.phone.number}
             </a>
-            We’re available during business hours to assist you.
+            . {config.phone.additionalInfo}
           </p>
+          
+          {/* Social Media Section */}
           <h2 className="font-ibm-plex-mono text-text-md-medium text-white mt-8 mb-2">
-            Follow Us on Social Media
+            {config.socialMedia.title}
           </h2>
           <p className="font-ibm-plex-mono text-text-md-regular text-textSecondary mb-4">
-            Stay connected with us on social media for updates, new arrivals,
-            and exciting offers.
-            <br />
-            Instagram:{" "}
-            <a
-              href="https://instagram.com/menoob.in"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline text-blue-500"
-            >
-              @menoob.in
-            </a>
+            {config.socialMedia.description}
           </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            {Object.entries(config.socialMedia.platforms).map(([platform, data]) => (
+              <div key={platform} className="flex items-center space-x-2">
+                <span className="font-ibm-plex-mono text-text-sm-medium text-white capitalize">
+                  {platform}:
+                </span>
+                <a
+                  href={data.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline text-blue-500 font-ibm-plex-mono text-text-sm-regular"
+                >
+                  {data.handle}
+                </a>
+              </div>
+            ))}
+          </div>
+          
+          {/* Website Section */}
           <h2 className="font-ibm-plex-mono text-text-md-medium text-white mt-8 mb-2">
-            Our Website
+            {config.website.title}
           </h2>
           <a
-            href="https://www.menoob.in"
+            href={config.website.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="underline text-blue-500"
+            className="underline text-blue-500 font-ibm-plex-mono text-text-md-regular"
           >
-            www.menoob.in
+            {config.website.url}
           </a>
         </div>
       </ResponsivePageContainer>
