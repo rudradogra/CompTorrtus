@@ -6,17 +6,20 @@ import { changePassword } from "@/firebaseConfig/firebaseConfig";
 import { getAuth } from "firebase/auth";
 import { Metadata } from "next";
 import { getImagePath } from "@/utils/imageToCdn";
+import { getWebsiteUrl } from "@/lib/contactUs/contactUs";
+
+const baseUrl = getWebsiteUrl();
 
 export const metadata: Metadata = {
   title: "Change Password - Menoob",
   description:
     "Change your password securely. Ensure your new password is strong and unique.",
-  metadataBase: new URL("https://www.menoob.in"),
+  metadataBase: new URL(baseUrl),
   openGraph: {
     title: "Change Password - Menoob",
     description:
       "Change your password securely. Ensure your new password is strong and unique.",
-    url: "https://www.menoob.in/profile/changePassword",
+    url: `${baseUrl}/profile/changePassword`,
     images: [
       {
         url: getImagePath("/common/group/1.jpg"),

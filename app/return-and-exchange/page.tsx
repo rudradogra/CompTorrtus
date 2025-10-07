@@ -5,17 +5,20 @@ import Footer from "@/components/layout/footer/footer";
 import ReturnAndExchangePageContent from "@/components/sections/returnAndExchange/returnAndExchange";
 import { Metadata } from "next";
 import { getImagePath } from "@/utils/imageToCdn";
+import { getWebsiteUrl } from "@/lib/contactUs/contactUs";
+
+const baseUrl = getWebsiteUrl();
 
 export const metadata: Metadata = {
   title: "Return and Exchange - Menoob",
   description:
     "Manage your return and exchange requests efficiently. Provide your order ID to initiate the process.",
-  metadataBase: new URL("https://www.menoob.in"),
+  metadataBase: new URL(baseUrl),
   openGraph: {
     title: "Return and Exchange - Menoob",
     description:
       "Manage your return and exchange requests efficiently. Provide your order ID to initiate the process.",
-    url: "https://www.menoob.in/return-and-exchange",
+    url: `${baseUrl}/return-and-exchange`,
     images: [
       {
         url: getImagePath("/common/group/1.jpg"),

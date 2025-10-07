@@ -10,6 +10,7 @@ import { Product } from "@/lib/productTypes";
 import { getProduct, getProducts } from "@/firebaseConfig/firebaseConfig";
 import ThreeDLogo from "@/components/common/3dlogo/ThreeDLogo";
 import { getImagePath } from "@/utils/imageToCdn";
+import { getWebsiteUrl } from "@/lib/contactUs/contactUs";
 
 type Props = {
   params: Promise<{ productId: string }>;
@@ -18,6 +19,7 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { productId } = await params;
   const products = await getProducts();
+  const baseUrl = getWebsiteUrl();
 
   const product = products.find(
     (item) =>
@@ -36,11 +38,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: product.name,
     description: product.name,
-    metadataBase: new URL("https://www.menoob.in"),
+    metadataBase: new URL(baseUrl),
     openGraph: {
       title: product.metaTitle,
       description: product.metaDescription,
-      url: `https://www.menoob.in/products/${productId}`,
+      url: `${baseUrl}/products/${productId}`,
       images: product.images.map((img) => ({
         url: getImagePath(img.imageUrl),
         alt: img.altText,

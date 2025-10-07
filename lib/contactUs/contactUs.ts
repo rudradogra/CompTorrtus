@@ -18,6 +18,9 @@ export const getContactEmail = () => getSiteConfig().contact.email.address;
 export const getContactPhone = () => getSiteConfig().contact.phone.number;
 export const getCompanyAddress = () => getSiteConfig().contact.address.full;
 
+// Website helpers
+export const getWebsiteUrl = () => getSiteConfig().contact.website.url;
+
 // Social media helpers
 export const getSocialMediaPlatforms = () => getSiteConfig().contact.socialMedia.platforms;
 export const getInstagramUrl = () => getSiteConfig().contact.socialMedia.platforms.instagram.url;

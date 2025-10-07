@@ -12,17 +12,20 @@ import { useRouter } from "next/navigation";
 import type { OrderData } from "@/lib/type";
 import { Metadata } from "next";
 import { getImagePath } from "@/utils/imageToCdn";
+import { getWebsiteUrl } from "@/lib/contactUs/contactUs";
+
+const baseUrl = getWebsiteUrl();
 
 export const metadata: Metadata = {
   title: "Order Details - Menoob",
   description:
     "View your order details, track shipments, and manage returns or replacements.",
-  metadataBase: new URL("https://www.menoob.in"),
+  metadataBase: new URL(baseUrl),
   openGraph: {
     title: "Order Details - Menoob",
     description:
       "View your order details, track shipments, and manage returns or replacements.",
-    url: "https://www.menoob.in/profile/orderDetails",
+    url: `${baseUrl}/profile/orderDetails`,
     images: [
       {
         url: getImagePath("/common/group/1.jpg"),

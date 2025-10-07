@@ -13,17 +13,20 @@ import { db } from "@/firebaseConfig/firebaseConfig";
 import { getAuth } from "firebase/auth";
 import { Metadata } from "next";
 import { getImagePath } from "@/utils/imageToCdn";
+import { getWebsiteUrl } from "@/lib/contactUs/contactUs";
+
+const baseUrl = getWebsiteUrl();
 
 export const metadata: Metadata = {
   title: "Account Details - Menoob",
   description:
     "Manage your account details, including email, name, and phone number.",
-  metadataBase: new URL("https://www.menoob.in"),
+  metadataBase: new URL(baseUrl),
   openGraph: {
     title: "Account Details - Menoob",
     description:
       "Manage your account details, including email, name, and phone number.",
-    url: "https://www.menoob.in/profile",
+    url: `${baseUrl}/profile`,
     images: [
       {
         url: getImagePath("/common/group/1.jpg"),

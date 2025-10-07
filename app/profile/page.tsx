@@ -4,17 +4,20 @@ import Header from "@/components/layout/header/header";
 import { Metadata } from "next";
 import Profile from "@/components/sections/profile/profile";
 import { getImagePath } from "@/utils/imageToCdn";
+import { getWebsiteUrl } from "@/lib/contactUs/contactUs";
+
+const baseUrl = getWebsiteUrl();
 
 export const metadata: Metadata = {
   title: "Profile - Menoob",
   description:
     "Manage your profile, view orders, update account details, and log out.",
-  metadataBase: new URL("https://www.menoob.in"),
+  metadataBase: new URL(baseUrl),
   openGraph: {
     title: "Profile - Menoob",
     description:
       "Manage your profile, view orders, update account details, and log out.",
-    url: "https://www.menoob.in/profile",
+    url: `${baseUrl}/profile`,
     images: [
       {
         url: getImagePath("/common/group/1.jpg"),

@@ -8,16 +8,18 @@ import Footer from "@/components/layout/footer/footer";
 import { getProducts } from "@/firebaseConfig/firebaseConfig";
 import { Metadata } from "next";
 import { getImagePath } from "@/utils/imageToCdn";
+import { getWebsiteUrl } from "@/lib/contactUs/contactUs";
 
 export async function generateMetadata(): Promise<Metadata> {
+  const baseUrl = getWebsiteUrl();
   return {
     title: "Latest Products - Menoob",
     description: "Explore our latest collection of products at Menoob.",
-    metadataBase: new URL("https://www.menoob.in"),
+    metadataBase: new URL(baseUrl),
     openGraph: {
       title: "Products - Menoob",
       description: "Explore our latest collection of products at Menoob.",
-      url: "https://www.menoob.in/products",
+      url: `${baseUrl}/products`,
       images: [
         {
           url: getImagePath("/common/group/1.jpg"),

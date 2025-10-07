@@ -8,17 +8,20 @@ import { getAddresses, updateAddress, deleteAddress } from "@/firebaseConfig/fir
 import { getAuth } from "firebase/auth";
 import { Metadata } from "next";
 import { getImagePath } from "@/utils/imageToCdn";
+import { getWebsiteUrl } from "@/lib/contactUs/contactUs";
+
+const baseUrl = getWebsiteUrl();
 
 export const metadata: Metadata = {
   title: "Address Management - Menoob",
   description:
     "Manage your addresses, add new ones, edit existing ones, and set defaults.",
-  metadataBase: new URL("https://www.menoob.in"),
+  metadataBase: new URL(baseUrl),
   openGraph: {
     title: "Address Management - Menoob",
     description:
       "Manage your addresses, add new ones, edit existing ones, and set defaults.",
-    url: "https://www.menoob.in/profile/address",
+    url: `${baseUrl}/profile/address`,
     images: [
       {
         url: getImagePath("/common/group/1.jpg"),
