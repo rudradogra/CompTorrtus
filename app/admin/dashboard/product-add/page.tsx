@@ -14,14 +14,22 @@ import {
 } from "@/lib/productTypes";
 import { db } from "@/firebaseConfig/firebaseConfig";
 import { ResponsivePageContainer } from "@/components/common/responsivePageContainer/responsivePageContainer";
-
-const categoryOptions = ["Apparel"];
-const subCategoryOptions = ["Oversized T-Shirts"];
-const subSubCategoryOptions = ["Valorant", "God of War", "GTA VI"];
-const genderOptions = ["Male", "Female", "Unisex"];
-const sizeOptions = ["S", "M", "L", "XL"];
+import { 
+  getCategoryOptions, 
+  getGenderOptions, 
+  getSizeOptions, 
+  getSubCategoryOptions, 
+  getSubSubCategoryOptions,
+  getAdminProductDefaults
+} from "@/lib/contactUs/adminProduct";
 
 export default function ProductAddPage() {
+  const categoryOptions = getCategoryOptions();
+  const subCategoryOptions = getSubCategoryOptions();
+  const subSubCategoryOptions = getSubSubCategoryOptions();
+  const genderOptions = getGenderOptions();
+  const sizeOptions = getSizeOptions();
+  const productDefaults = getAdminProductDefaults();
   const router = useRouter();
   const params = useSearchParams();
   const isEditMode = params?.get("edit") === "true";
@@ -32,10 +40,10 @@ export default function ProductAddPage() {
     id: "",
     sku_id: "",
     name: "",
-    gender: "Unisex",
-    category: "Apparel",
-    subCategory: "Oversized T-Shirts",
-    subSubCategory: "Valorant",
+    gender: productDefaults.gender,
+    category: productDefaults.category,
+    subCategory: productDefaults.subCategory,
+    subSubCategory: subSubCategoryOptions[0] || "Valorant",
     pricing: { mrp: "", discount: "", sellingPrice: "" },
     productDescription: {
       description: "",
@@ -44,7 +52,7 @@ export default function ProductAddPage() {
         material: "",
         weight: "",
         care_instructions: "",
-        country_of_origin: "India",
+        country_of_origin: productDefaults.countryOfOrigin,
       },
     },
     images: [],
@@ -58,13 +66,19 @@ export default function ProductAddPage() {
   const [material, setMaterial] = useState("");
   const [weight, setWeight] = useState("");
   const [careInstructions, setCareInstructions] = useState("");
-  const [origin, setOrigin] = useState("India");
-  const [sizes, setSizes] = useState<ProductSize[]>([]);
+  const [origin, setOrigin] = useState(productDefaults.countryOfOrigin);
+  const [sizes, setSizes] = useState<ProductSize[]>(
+    sizeOptions.map(size => ({ 
+      size: size as "S" | "M" | "L" | "XL" | "XXL", 
+      quantity: 0, 
+      colours: [] 
+    }))
+  );
   const [name, setName] = useState("");
-  const [gender, setGender] = useState("Unisex");
-  const [category, setCategory] = useState("Apparel");
-  const [subCategory, setSubCategory] = useState("Oversized T-Shirts");
-  const [subSubCategory, setSubSubCategory] = useState("Valorant");
+  const [gender, setGender] = useState(productDefaults.gender);
+  const [category, setCategory] = useState(productDefaults.category);
+  const [subCategory, setSubCategory] = useState(productDefaults.subCategory);
+  const [subSubCategory, setSubSubCategory] = useState(productDefaults.subSubCategory);
   const [pricing, setPricing] = useState({
     mrp: "",
     discount: "",

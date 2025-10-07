@@ -1,0 +1,16 @@
+{
+  "adminProductOptions": {
+    "categories": ["Apparel"],
+    "subCategories": ["Oversized T-Shirts"],
+    "subSubCategories": ["Valorant", "God of War", "GTA VI"],
+    "genders": ["Male", "Female", "Unisex"],
+    "sizes": ["S", "M", "L", "XL"],
+    "defaultValues": {
+      "category": "Apparel",
+      "subCategory": "Oversized T-Shirts",
+      "subSubCategory": "Valorant",
+      "gender": "Unisex",
+      "countryOfOrigin": "India"
+    }
+  }
+}

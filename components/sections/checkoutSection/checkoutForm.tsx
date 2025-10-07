@@ -7,7 +7,7 @@ import TextInput from "@/components/common/textInput/textInput";
 import React, { useState, useEffect } from "react";
 
 import { db } from "@/firebaseConfig/firebaseConfig";
-import { doc, setDoc, updateDoc } from "firebase/firestore";
+import { doc, setDoc, updateDoc, onSnapshot } from "firebase/firestore";
 import {
   incrementStockCount,
   getCoupon,
@@ -102,6 +102,38 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ isBuyNow }) => {
 
     return () => unsubscribe();
   }, []);
+
+  // Fetch user profile data and autofill form fields
+  useEffect(() => {
+    if (!user) return;
+
+    const userDoc = doc(db, "users", user.uid);
+    const unsubscribe = onSnapshot(
+      userDoc,
+      (docSnapshot) => {
+        if (docSnapshot.exists()) {
+          const userData = docSnapshot.data();
+          
+          // Only autofill if fields are currently empty to preserve user edits
+          setFormState(prevState => {
+            const fullName = `${userData.firstName || ""} ${userData.lastName || ""}`.trim();
+            
+            return {
+              ...prevState,
+              email: prevState.email === "" ? (userData.email || "") : prevState.email,
+              name: prevState.name === "" ? fullName : prevState.name,
+              phoneNumber: prevState.phoneNumber === "" ? (userData.phoneNumber || "") : prevState.phoneNumber,
+            };
+          });
+        }
+      },
+      (error) => {
+        console.error("Error fetching user profile data:", error);
+      }
+    );
+
+    return () => unsubscribe();
+  }, [user]);
 
   const fetchCartDetails = useCallback(async () => {
     let subtotal = 0;
