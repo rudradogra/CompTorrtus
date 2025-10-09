@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { getBrandDisplayName, getContactInfo } from './contactUs/contactUs';
+import { getBrandDisplayName, getContactInfo, getContactPageContent } from './contactUs/contactUs';
 import { getImagePath } from '@/utils/imageToCdn';
 import metadataData from './menoob/menoobMetadata.json';
 import { MetadataConfig } from './contactUs/metadata.types';
@@ -72,7 +72,15 @@ export const getHomeMetadata = (): Metadata => {
 };
 
 export const getContactMetadata = (): Metadata => {
-  return getPageMetadata('contact');
+  const contactPageContent = getContactPageContent();
+  const contactInfo = getContactInfo();
+  
+  return generateMetadata({
+    title: contactPageContent.pageTitle,
+    description: contactPageContent.description1,
+    path: "/contact",
+    image: getImagePath("/banner/banner.png"),
+  });
 };
 
 export const getProfileMetadata = (): Metadata => {
