@@ -1,19 +1,10 @@
 'use client';
 
-import { useEffect } from 'react';
-import { usePathname } from 'next/navigation';
 import Script from 'next/script';
 
+// Meta Pixel component that only initializes the pixel (no automatic tracking)
 const MetaPixel = () => {
-  const pathname = usePathname();
   const pixelId = process.env.NEXT_PUBLIC_META_PIXEL_ID;
-
-  useEffect(() => {
-    // Track page views on route change
-    if (typeof window !== 'undefined' && window.fbq) {
-      window.fbq('track', 'PageView');
-    }
-  }, [pathname]);
 
   if (!pixelId) return null;
 
@@ -30,7 +21,6 @@ const MetaPixel = () => {
           s.parentNode.insertBefore(t,s)}(window, document,'script',
           'https://connect.facebook.net/en_US/fbevents.js');
           fbq('init', '${pixelId}');
-          fbq('track', 'PageView');
         `}
       </Script>
       <noscript>
@@ -45,6 +35,70 @@ const MetaPixel = () => {
       </noscript>
     </>
   );
+};
+
+// Utility functions for tracking specific events
+export const trackViewContent = (contentName: string, contentId: string, value?: number) => {
+  if (typeof window !== 'undefined' && window.fbq) {
+    window.fbq('track', 'ViewContent', {
+      content_name: contentName,
+      content_ids: [contentId],
+      value: value,
+      currency: 'INR'
+    });
+  }
+};
+
+export const trackInitiateCheckout = (value: number, contents: Array<{id: string, quantity: number}> = []) => {
+  if (typeof window !== 'undefined' && window.fbq) {
+    window.fbq('track', 'InitiateCheckout', {
+      value: value,
+      currency: 'INR',
+      contents: contents
+    });
+  }
+};
+
+export const trackAddToCart = (contentName: string, contentId: string, value: number) => {
+  if (typeof window !== 'undefined' && window.fbq) {
+    window.fbq('track', 'AddToCart', {
+      content_name: contentName,
+      content_ids: [contentId],
+      value: value,
+      currency: 'INR'
+    });
+  }
+};
+
+export const trackPurchase = (value: number, contents: Array<{id: string, quantity: number}> = []) => {
+  if (typeof window !== 'undefined' && window.fbq) {
+    window.fbq('track', 'Purchase', {
+      value: value,
+      currency: 'INR',
+      contents: contents
+    });
+  }
+};
+
+export const trackProductClick = (contentName: string, contentId: string, source: string = 'homepage') => {
+  if (typeof window !== 'undefined' && window.fbq) {
+    window.fbq('trackCustom', 'ProductClick', {
+      content_name: contentName,
+      content_ids: [contentId],
+      source: source
+    });
+  }
+};
+
+export const trackRemoveFromCart = (contentName: string, contentId: string, value: number) => {
+  if (typeof window !== 'undefined' && window.fbq) {
+    window.fbq('trackCustom', 'RemoveFromCart', {
+      content_name: contentName,
+      content_ids: [contentId],
+      value: value,
+      currency: 'INR'
+    });
+  }
 };
 
 export default MetaPixel;

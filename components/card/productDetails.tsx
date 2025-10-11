@@ -15,6 +15,7 @@ import useSizeChart from "@/hooks/useSizeChart";
 import { getImagePath } from "@/utils/imageToCdn";
 import OutOfStockButton from "../common/outOfStockButton/outOfStockButton";
 import { getFirestore, doc, getDoc } from "firebase/firestore";
+import { trackAddToCart } from "@/components/meta-pixel/meta-pixel";
 
 interface ProductDetailsProps {
   product: Product;
@@ -106,6 +107,10 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({
       selectedSize,
     };
     await addToCart(newItem);
+    
+    // Track AddToCart event
+    trackAddToCart(product.name, product.id, parseInt(product.pricing.sellingPrice));
+    
     if (typeof window !== "undefined") {
       window.dispatchEvent(new CustomEvent("open-cart-drawer"));
     }

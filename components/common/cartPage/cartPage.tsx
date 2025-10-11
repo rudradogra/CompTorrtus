@@ -9,6 +9,7 @@ import { useBuyNow } from "@/hooks/useBuyNow";
 import { useCart } from "@/hooks/useCart";
 import { CartItem } from "@/lib/type";
 import { getImagePath } from "@/utils/imageToCdn";
+import { trackRemoveFromCart } from "@/components/meta-pixel/meta-pixel";
 
 interface CartPageProps {
   closeCart?: () => void;
@@ -45,6 +46,9 @@ const CartPage: React.FC<CartPageProps> = ({ closeCart }) => {
   };
 
   const handleDelete = (item: CartItem) => {
+    // Track RemoveFromCart event
+    trackRemoveFromCart(item.title, item.id, parseInt(item.sellingPrice || item.price));
+    
     deleteItemFromCart(item);
   };
 

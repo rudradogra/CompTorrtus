@@ -11,6 +11,7 @@ import { getProduct, getProducts } from "@/firebaseConfig/firebaseConfig";
 import ThreeDLogo from "@/components/common/3dlogo/ThreeDLogo";
 import { getImagePath } from "@/utils/imageToCdn";
 import { getWebsiteUrl, getBrandDisplayName } from "@/lib/contactUs/contactUs";
+import ProductPixelTracker from "@/components/meta-pixel/product-pixel-tracker";
 
 type Props = {
   params: Promise<{ productId: string }>;
@@ -91,6 +92,11 @@ const ProductDetailsPage = async ({
       <Header />
       {productDetails && (
         <div>
+          <ProductPixelTracker 
+            productName={productDetails.name}
+            productId={productDetails.id}
+            price={parseInt(productDetails.pricing.sellingPrice)}
+          />
           <ProductDetails product={productDetails} />
 
           <Spacer />

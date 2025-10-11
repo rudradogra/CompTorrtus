@@ -108,10 +108,6 @@ const Header: React.FC<HeaderProps> = ({ type = "default" }) => {
             </Link>
 
             <div className="flex flex-row gap-5 ">
-              {/* <div className="relative h-6 w-6">
-                <Image src="/static/icons/search.svg" alt="Search" fill />
-              </div> */}
-
               <button
                 onClick={() => setCartOpen(true)}
                 className="relative h-6 w-6"

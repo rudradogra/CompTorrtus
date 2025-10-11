@@ -1,7 +1,10 @@
+'use client';
+
 import { getImagePath } from "@/utils/imageToCdn";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { trackProductClick } from "@/components/meta-pixel/meta-pixel";
 
 interface ProductCardProps {
   id: string;
@@ -28,9 +31,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }: ProductCardProps) => {
   // Remove timer and use CSS hover for image transition
 
+  const handleProductClick = () => {
+    // Track product click event
+    trackProductClick(title, id, 'homepage');
+  };
+
   return (
     <>
-      <Link href={href} key={id}>
+      <Link href={href} key={id} onClick={handleProductClick}>
         <div className="relative flex flex-col gap-6">
           {comingSoon ? (
             <>

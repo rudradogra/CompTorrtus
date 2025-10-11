@@ -27,6 +27,7 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import AppliedCouponCodeBtn from "@/components/common/appliedCouponCodeBtn/appliedCouponCodeBtn";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { trackInitiateCheckout, trackPurchase } from "@/components/meta-pixel/meta-pixel";
 
 // Add Razorpay type to window
 declare global {
@@ -428,6 +429,12 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ isBuyNow }) => {
         return;
       }
 
+      // Track InitiateCheckout event
+      trackInitiateCheckout(price, cartDetails.cartItems.map(item => ({
+        id: item.id,
+        quantity: item.quantity || 1
+      })));
+
       // createOrderId will convert to paise internally
       const orderId: string = await createOrderId(price, "INR");
       // Store order in Firestore before payment
@@ -478,6 +485,12 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ isBuyNow }) => {
             });
             const result = await paymentResponse.json();
             if (result.success) {
+              // Track Purchase event
+              trackPurchase(cartDetails.total, cartDetails.cartItems.map(item => ({
+                id: item.id,
+                quantity: item.quantity || 1
+              })));
+
               // Update Firestore order with Razorpay info and status
               await updateDoc(doc(db, "orders", orderId), {
                 status: "paid",
