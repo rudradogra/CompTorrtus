@@ -73,7 +73,6 @@ export const getHomeMetadata = (): Metadata => {
 
 export const getContactMetadata = (): Metadata => {
   const contactPageContent = getContactPageContent();
-  const contactInfo = getContactInfo();
   
   return generateMetadata({
     title: contactPageContent.pageTitle,

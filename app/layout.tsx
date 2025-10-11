@@ -9,6 +9,7 @@ import {
 import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Clarity from "@/components/clarity/clarity";
+import MetaPixel from "@/components/meta-pixel/meta-pixel";
 
 const pressStart2P = Press_Start_2P({
   variable: "--font-press-start-2p",
@@ -56,6 +57,7 @@ export default function RootLayout({
         className={`${pressStart2P.variable} ${ibmPlexMono.variable} ${anonymousPro.variable} ${barlow.variable} ${plusJakartaSans.variable} antialiased`}
       >
         {children}
+        <MetaPixel />
       </body>
       <GoogleAnalytics gaId={"G-HCY98Y6WMF"} />
       <Clarity />
