@@ -72,6 +72,138 @@ const Header = ({ currentPage = "PRE BUILD PC" }) => {
               >
                 ☰ CATEGORIES
               </button>
+              
+              {/* Dropdown Menu */}
+              <div className="categories-dropdown">
+                <div className="dropdown-item-container">
+                  <a href="#" className="dropdown-item">
+                    <span>Custom Cooling</span>
+                    <span className="arrow">{'>'}</span>
+                  </a>
+                  <div className="sub-dropdown">
+                    <div className="sub-dropdown-content">
+                      <div className="sub-dropdown-header">DIY COOLING</div>
+                      <div className="sub-dropdown-columns">
+                        <div className="sub-dropdown-column">
+                          <a href="#" className="sub-dropdown-item">CPU Water Block</a>
+                          <a href="#" className="sub-dropdown-item">GPU Water Block</a>
+                          <a href="#" className="sub-dropdown-item">Pump & Reservoir</a>
+                          <a href="#" className="sub-dropdown-item">Fitting Adapter</a>
+                          <a href="#" className="sub-dropdown-item">Tubing</a>
+                        </div>
+                        <div className="sub-dropdown-column">
+                          <a href="#" className="sub-dropdown-item">Coolant</a>
+                          <a href="#" className="sub-dropdown-item">Radiator</a>
+                          <a href="#" className="sub-dropdown-item">Distro Plate</a>
+                          <a href="#" className="sub-dropdown-item">Accessories</a>
+                        </div>
+                      </div>
+                      <div className="sub-dropdown-brands">
+                        <div className="brand-logo">EKWB</div>
+                        <div className="brand-logo">HYDROX SERIES</div>
+                        <div className="brand-logo">BYKSKI</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="dropdown-item-container">
+                  <a href="#" className="dropdown-item">
+                    <span>Processor</span>
+                    <span className="arrow">{'>'}</span>
+                  </a>
+                  <div className="sub-dropdown">
+                    <div className="sub-dropdown-content">
+                      <div className="sub-dropdown-header">PROCESSORS</div>
+                      <div className="sub-dropdown-columns">
+                        <div className="sub-dropdown-column">
+                          <a href="#" className="sub-dropdown-item">Intel Core i3</a>
+                          <a href="#" className="sub-dropdown-item">Intel Core i5</a>
+                          <a href="#" className="sub-dropdown-item">Intel Core i7</a>
+                          <a href="#" className="sub-dropdown-item">Intel Core i9</a>
+                        </div>
+                        <div className="sub-dropdown-column">
+                          <a href="#" className="sub-dropdown-item">AMD Ryzen 3</a>
+                          <a href="#" className="sub-dropdown-item">AMD Ryzen 5</a>
+                          <a href="#" className="sub-dropdown-item">AMD Ryzen 7</a>
+                          <a href="#" className="sub-dropdown-item">AMD Ryzen 9</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="dropdown-item-container">
+                  <a href="#" className="dropdown-item">
+                    <span>CPU Cooler</span>
+                    <span className="arrow">{'>'}</span>
+                  </a>
+                </div>
+
+                <div className="dropdown-item-container">
+                  <a href="#" className="dropdown-item">
+                    <span>Motherboard</span>
+                    <span className="arrow">{'>'}</span>
+                  </a>
+                </div>
+
+                <div className="dropdown-item-container">
+                  <a href="#" className="dropdown-item">
+                    <span>Graphics Card</span>
+                    <span className="arrow">{'>'}</span>
+                  </a>
+                </div>
+
+                <div className="dropdown-item-container">
+                  <a href="#" className="dropdown-item">
+                    <span>RAM</span>
+                    <span className="arrow">{'>'}</span>
+                  </a>
+                </div>
+
+                <div className="dropdown-item-container">
+                  <a href="#" className="dropdown-item">
+                    <span>Storage</span>
+                    <span className="arrow">{'>'}</span>
+                  </a>
+                </div>
+
+                <div className="dropdown-item-container">
+                  <a href="#" className="dropdown-item">
+                    <span>SMPS</span>
+                    <span className="arrow">{'>'}</span>
+                  </a>
+                </div>
+
+                <div className="dropdown-item-container">
+                  <a href="#" className="dropdown-item">
+                    <span>Cabinet</span>
+                    <span className="arrow">{'>'}</span>
+                  </a>
+                </div>
+
+                <div className="dropdown-item-container">
+                  <a href="#" className="dropdown-item">
+                    <span>Monitor</span>
+                    <span className="arrow">{'>'}</span>
+                  </a>
+                </div>
+
+                <div className="dropdown-item-container">
+                  <a href="#" className="dropdown-item">
+                    <span>Peripherals</span>
+                    <span className="arrow">{'>'}</span>
+                  </a>
+                </div>
+                <a href="#" className="dropdown-item">
+                  <span>Laptop</span>
+                  <span className="arrow">{'>'}</span>
+                </a>
+                <a href="#" className="dropdown-item">
+                  <span>Mini PC</span>
+                  <span className="arrow">{'>'}</span>
+                </a>
+              </div>
             </div>
 
             {/* Navigation Links */}
