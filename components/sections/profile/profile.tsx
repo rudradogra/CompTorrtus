@@ -48,7 +48,7 @@ const Profile = () => {
           return <AddressSection />;
         case "logout":
           return (
-            <div>
+            <div className="flex justify-center items-center h-full">
               {showLogoutPopup && (
                 <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
                   <div className="bg-white p-6 rounded shadow-lg text-center">
@@ -74,7 +74,7 @@ const Profile = () => {
               )}
               <button
                 onClick={() => setShowLogoutPopup(true)}
-                className="bg-red-500 text-white px-4 py-2 rounded"
+                className="bg-red-500 text-white px-4 py-2 rounded font-ibm-plex-mono"
               >
                 Log Out
               </button>
