@@ -114,10 +114,7 @@ const AddAddressForm: React.FC<AddAddressFormProps> = ({
     onAddressChange("state", selectedPincode.state);
     onAddressChange("country", "India");
     
-    // Optionally set landmark if empty
-    if (!address.address.landmark) {
-      onAddressChange("landmark", selectedPincode.area);
-    }
+    // Do not autofill landmark - let user fill it manually
     
     setShowPincodeDropdown(false);
     setPincodeOptions([]);
@@ -138,9 +135,7 @@ const AddAddressForm: React.FC<AddAddressFormProps> = ({
           onAddressChange("state", locationData.state);
           onAddressChange("country", "India");
 
-          if (!address.address.landmark) {
-            onAddressChange("landmark", locationData.area);
-          }
+          // Do not autofill landmark - let user fill it manually
         } else {
           setPincodeError("Invalid pincode or location not found");
         }

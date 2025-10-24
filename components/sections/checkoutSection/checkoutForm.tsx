@@ -573,6 +573,113 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ isBuyNow }) => {
     }
   };
 
+  const handleCashOnDelivery = async (e?: React.MouseEvent) => {
+    if (e) e.preventDefault();
+    setProcessingPaymentMessage(true);
+    const errors = validateForm();
+    setFormErrors(errors);
+    if (Object.keys(errors).length > 0) {
+      setProcessingPaymentMessage(false);
+      return;
+    }
+    try {
+      const price = roundToNearest99(cartDetails.total);
+      if (price <= 0) {
+        toast.error(
+          "Order total cannot be zero or negative. Please remove excessive discounts."
+        );
+        setProcessingPaymentMessage(false);
+        return;
+      }
+      if (!isFormComplete()) {
+        toast.error("Please fill all required information and address fields.");
+        setProcessingPaymentMessage(false);
+        return;
+      }
+
+      // Track InitiateCheckout event for COD
+      trackInitiateCheckout(price, cartDetails.cartItems.map(item => ({
+        id: item.id,
+        quantity: item.quantity || 1
+      })));
+
+      // Generate a simple order ID for COD orders
+      const orderId = `COD_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+      
+      // Store COD order in Firestore
+      const orderData = {
+        orderId,
+        status: "pending", // COD orders start as pending
+        paymentMethod: "cash_on_delivery",
+        currentLoggedInUserId: user ? user.uid : null,
+        currentLoggedInUserEmail: user ? user.email : null,
+        userInfo: {
+          email: formState.email,
+          name: formState.name,
+          phoneNumber: formState.phoneNumber,
+          address: formState.address,
+        },
+        cart: cartDetails.cartItems,
+        subtotal: cartDetails.subtotal,
+        discount: cartDetails.totalDiscount,
+        tax: cartDetails.tax,
+        total: cartDetails.total,
+        createdAt: new Date().toISOString(),
+      };
+      
+      await setDoc(doc(db, "orders", orderId), orderData);
+
+      // Track Purchase event for COD
+      trackPurchase(cartDetails.total, cartDetails.cartItems.map(item => ({
+        id: item.id,
+        quantity: item.quantity || 1
+      })));
+
+      // Increment stock count for each product and size in the order
+      for (const item of orderData.cart) {
+        if (item.id && item.selectedSize && item.quantity) {
+          await incrementStockCount(
+            item.id,
+            item.selectedSize,
+            item.quantity
+          );
+        }
+      }
+
+      // Increment coupon usage for COD orders
+      if (appliedCoupon) {
+        await updateCouponUsage(
+          appliedCoupon.code,
+          user ? user.uid : "guest"
+        );
+      }
+
+      // Send order confirmation email to user
+      await sendOrderEmail(
+        { ...orderData, orderId, createdAt: new Date().toISOString() },
+        formState.email,
+        formState.name
+      );
+      
+      // Send order confirmation email to admin
+      await sendOrderEmail(
+        { ...orderData, orderId, createdAt: new Date().toISOString() },
+        "ordersmenoob@gmail.com",
+        "Menoob"
+      );
+
+      // Redirect to order confirmation page
+      setTimeout(() => {
+        window.location.href = `/checkout/order-confirm?orderId=${orderId}`;
+      }, 1000);
+      
+    } catch (error) {
+      setProcessingPaymentMessage(false);
+      toast.error("Order placement failed. Please try again.");
+      console.error(error);
+    }
+  };
+
   return (
     <ResponsivePageContainer>
       {/* Payment Processing Loader Overlay */}
@@ -815,7 +922,20 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ isBuyNow }) => {
                 onClick={handleProceedToPay}
                 fullWidth
                 disabled={processingPaymentMessage || isProcessingPayment}
+                type="secondary"
               />
+              
+              <Button
+                text={
+                  processingPaymentMessage || isProcessingPayment
+                    ? "Processing..."
+                    : "Cash on Delivery"
+                }
+                onClick={handleCashOnDelivery}
+                fullWidth
+                disabled={processingPaymentMessage || isProcessingPayment}
+              />
+              
               <Script
                 id="razorpay-checkout-js"
                 src="https://checkout.razorpay.com/v1/checkout.js"
