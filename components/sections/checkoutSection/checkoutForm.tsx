@@ -606,10 +606,10 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ isBuyNow }) => {
       // Generate a simple order ID for COD orders
       const orderId = `COD_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
       
-      // Store COD order in Firestore
+      // Store COD order in Firestore - Start as "unpaid" since payment will be collected on delivery
       const orderData = {
         orderId,
-        status: "pending", // COD orders start as pending
+        status: "unpaid", // COD orders start as unpaid (payment on delivery)
         paymentMethod: "cash_on_delivery",
         currentLoggedInUserId: user ? user.uid : null,
         currentLoggedInUserEmail: user ? user.email : null,
@@ -625,17 +625,22 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ isBuyNow }) => {
         tax: cartDetails.tax,
         total: cartDetails.total,
         createdAt: new Date().toISOString(),
+        // COD specific fields (no Razorpay fields)
+        paymentCollectedOnDelivery: false, // Track if payment was collected
+        deliveryStatus: "pending", // pending, out_for_delivery, delivered
+        // Note: No razorpay_payment_id, razorpay_signature, razorpay_order_id for COD
       };
       
       await setDoc(doc(db, "orders", orderId), orderData);
 
-      // Track Purchase event for COD
+      // Track Purchase event for COD (even though payment is pending)
       trackPurchase(cartDetails.total, cartDetails.cartItems.map(item => ({
         id: item.id,
         quantity: item.quantity || 1
       })));
 
       // Increment stock count for each product and size in the order
+      // (Reserve inventory immediately even for COD)
       for (const item of orderData.cart) {
         if (item.id && item.selectedSize && item.quantity) {
           await incrementStockCount(
