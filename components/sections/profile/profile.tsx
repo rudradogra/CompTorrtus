@@ -16,7 +16,7 @@ const profileItems = [
   // { id: "wallet", name: "Your Wallet" },
   { id: "account", name: "Account Details" },
   // { id: "password", name: "Password" },
-  // { id: "address", name: "Your Address" },
+  { id: "address", name: "Your Address" },
   { id: "logout", name: "Log Out" },
 ];
 

@@ -19,6 +19,7 @@ export interface Address {
 }
 
 export interface AddressData {
+  label: string;
   id: string;
   name: string;
   email?: string;
