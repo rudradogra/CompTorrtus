@@ -46,18 +46,50 @@ export const logout = async () => {
 const addressCollection = "address";
 
 export const addAddress = async (userId: string, address: AddressData) => {
-  const userDocRef = doc(firestore, addressCollection, userId);
-  const userAddresses = (await getDoc(userDocRef)).data() || {};
-  const addressId = crypto.randomUUID();
-  userAddresses[addressId] = address;
-  await setDoc(userDocRef, userAddresses);
-  return addressId;
+  try {
+    console.log("Firebase addAddress called with:", { userId, address });
+    
+    const userDocRef = doc(firestore, addressCollection, userId);
+    const userDoc = await getDoc(userDocRef);
+    const userAddresses = userDoc.data() || {};
+    
+    console.log("Current user addresses:", userAddresses);
+    
+    const addressId = crypto.randomUUID();
+    const addressWithId = { ...address, id: addressId };
+    userAddresses[addressId] = addressWithId;
+    
+    console.log("Saving to Firebase with ID:", addressId);
+    console.log("Updated addresses object:", userAddresses);
+    
+    await setDoc(userDocRef, userAddresses);
+    
+    console.log("Address successfully saved to Firebase");
+    return addressId;
+  } catch (error) {
+    console.error("Error in Firebase addAddress:", error);
+    throw error;
+  }
 };
 
 export const getAddresses = async (userId: string): Promise<AddressData[]> => {
-  const userDocRef = doc(firestore, addressCollection, userId);
-  const userAddresses = (await getDoc(userDocRef)).data();
-  return userAddresses ? Object.values(userAddresses) : [];
+  try {
+    console.log("Firebase getAddresses called for userId:", userId);
+    
+    const userDocRef = doc(firestore, addressCollection, userId);
+    const userDoc = await getDoc(userDocRef);
+    const userAddresses = userDoc.data();
+    
+    console.log("Raw addresses from Firebase:", userAddresses);
+    
+    const addressesArray = userAddresses ? Object.values(userAddresses) : [];
+    console.log("Addresses array:", addressesArray);
+    
+    return addressesArray as AddressData[];
+  } catch (error) {
+    console.error("Error in Firebase getAddresses:", error);
+    throw error;
+  }
 };
 
 export const updateAddress = async (

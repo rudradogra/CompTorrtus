@@ -9,6 +9,8 @@ import { getAuth } from "firebase/auth";
 import { Metadata } from "next";
 import { getImagePath } from "@/utils/imageToCdn";
 import { getWebsiteUrl, getBrandDisplayName } from "@/lib/contactUs/contactUs";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const baseUrl = getWebsiteUrl();
 const brandName = getBrandDisplayName();
@@ -143,13 +145,21 @@ const AddressSection = () => {
 
   // Handle new address addition
   const handleAddNewAddress = (newAddress: AddressData) => {
+    console.log("handleAddNewAddress called with:", newAddress);
+    console.log("Current addresses count:", addresses.length);
+    
     setAddresses((prev) => {
       // Check if address already exists to prevent duplicates
       const exists = prev.some(addr => addr.id === newAddress.id);
       if (exists) {
+        console.log("Address already exists, not adding duplicate");
+        toast.warning("Address already exists!");
         return prev;
       }
-      return [...prev, newAddress];
+      const updatedAddresses = [...prev, newAddress];
+      console.log("Updated addresses count:", updatedAddresses.length);
+      toast.success(`Address "${newAddress.label || newAddress.name}" added successfully!`);
+      return updatedAddresses;
     });
   };
 
@@ -325,6 +335,18 @@ const AddressSection = () => {
           </div>
         </Modal>
       )}
+      <ToastContainer
+        position="top-right"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
   );
 };

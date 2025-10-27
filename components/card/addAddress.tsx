@@ -5,6 +5,7 @@ import { AddressData } from "@/lib/type";
 import { addAddress, getAddresses } from "@/firebaseConfig/firebaseConfig";
 import { getAuth } from "firebase/auth";
 import { fetchLocationFromPincode, isValidPincode } from "@/utils/pincodeAutofill";
+import { toast } from "react-toastify";
 
 interface AddAddressCardProps {
   onAddressAdded?: (address: AddressData) => void;
@@ -70,24 +71,40 @@ const AddAddressCard: React.FC<AddAddressCardProps> = ({ onAddressAdded, existin
 
   // Generate next available label based on existing addresses
   const generateNextLabel = (): string => {
-    if (existingAddresses.length === 0) return "1";
+    console.log("Generating next label for", existingAddresses.length, "existing addresses");
+    
+    if (existingAddresses.length === 0) {
+      console.log("No existing addresses, returning '1'");
+      return "1";
+    }
     
     // Extract numeric labels and find the highest number
-    const numericLabels = existingAddresses
-      .map(addr => addr.label || addr.name || "0")
+    const allLabels = existingAddresses.map(addr => addr.label || addr.name || "0");
+    console.log("All existing labels:", allLabels);
+    
+    const numericLabels = allLabels
       .filter(label => /^\d+$/.test(label))
       .map(label => parseInt(label, 10));
     
-    if (numericLabels.length === 0) return "1";
+    console.log("Numeric labels:", numericLabels);
+    
+    if (numericLabels.length === 0) {
+      console.log("No numeric labels found, returning '1'");
+      return "1";
+    }
     
     const maxLabel = Math.max(...numericLabels);
-    return (maxLabel + 1).toString();
+    const nextLabel = (maxLabel + 1).toString();
+    console.log("Next label will be:", nextLabel);
+    return nextLabel;
   };
 
   // Set default label when modal opens
   useEffect(() => {
     if (isModalOpen) {
       const nextLabel = generateNextLabel();
+      console.log("Setting default label:", nextLabel);
+      console.log("Current existing addresses:", existingAddresses.length);
       setAddressLabel(nextLabel);
     }
   }, [isModalOpen, existingAddresses.length]);
@@ -199,14 +216,8 @@ const AddAddressCard: React.FC<AddAddressCardProps> = ({ onAddressAdded, existin
   };
 
   const validateForm = (): boolean => {
+    console.log("validateForm called");
     const errors: { [key: string]: string } = {};
-
-    // Remove the maximum addresses check from here - let it save up to 3
-    // if (existingAddresses.length >= 3) {
-    //   errors.general = "Maximum 3 addresses allowed. Please delete an existing address first.";
-    //   setFormErrors(errors);
-    //   return false;
-    // }
 
     if (!addressLabel.trim()) {
       errors.label = "Address label is required";
@@ -228,10 +239,15 @@ const AddAddressCard: React.FC<AddAddressCardProps> = ({ onAddressAdded, existin
 
     // Check for duplicate labels
     const existingLabels = existingAddresses.map(addr => addr.label || addr.name || "");
+    console.log("Existing labels:", existingLabels);
+    console.log("New label:", addressLabel.trim());
+    
     if (existingLabels.includes(addressLabel.trim())) {
+      console.log("Duplicate label detected!");
       errors.label = "This label already exists. Please choose a different one.";
     }
 
+    console.log("Validation errors:", errors);
     setFormErrors(errors);
     return Object.keys(errors).length === 0;
   };
@@ -262,10 +278,16 @@ const AddAddressCard: React.FC<AddAddressCardProps> = ({ onAddressAdded, existin
   };
 
   const handleSaveAddress = async () => {
+    console.log("handleSaveAddress called");
+    console.log("Existing addresses count:", existingAddresses.length);
+    console.log("Address label:", addressLabel);
+    
     if (!validateForm()) {
+      console.log("Validation failed, not saving");
       return;
     }
 
+    console.log("Starting save process...");
     setIsLoading(true);
     try {
       const auth = getAuth();
@@ -277,6 +299,7 @@ const AddAddressCard: React.FC<AddAddressCardProps> = ({ onAddressAdded, existin
       }
 
       const userId = user.uid;
+      console.log("User ID:", userId);
 
       // Create address with label (no phone number)
       const addressToSave = {
@@ -286,23 +309,28 @@ const AddAddressCard: React.FC<AddAddressCardProps> = ({ onAddressAdded, existin
         phoneNumber: "", // Remove phone number
       };
       
-      console.log("Saving address:", addressToSave); // Debug log
+      console.log("Saving address:", addressToSave);
       
       const newAddressId = await addAddress(userId, addressToSave);
       
-      console.log("Address saved with ID:", newAddressId); // Debug log
+      console.log("Address saved with ID:", newAddressId);
 
       // Call the callback to update parent component
       if (onAddressAdded) {
+        console.log("Calling onAddressAdded callback");
         onAddressAdded({ ...addressToSave, id: newAddressId });
+      } else {
+        console.log("onAddressAdded callback not available");
       }
 
       // Reset form and close modal
+      console.log("Resetting form and closing modal");
       resetForm();
       setIsModalOpen(false);
       
     } catch (error) {
       console.error("Error adding address:", error);
+      toast.error("Failed to save address. Please try again.");
     } finally {
       setIsLoading(false);
     }
@@ -314,11 +342,17 @@ const AddAddressCard: React.FC<AddAddressCardProps> = ({ onAddressAdded, existin
   };
 
   const handleModalOpen = () => {
+    console.log("handleModalOpen called");
+    console.log("Existing addresses count:", existingAddresses.length);
+    
     // Check if maximum addresses reached before opening modal
     if (existingAddresses.length >= 3) {
+      console.log("Maximum addresses reached, showing alert");
       alert("Maximum 3 addresses allowed. Please delete an existing address first.");
       return;
     }
+    
+    console.log("Opening modal, resetting form");
     resetForm(); // Reset form when opening modal
     setIsModalOpen(true);
   };
