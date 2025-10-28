@@ -1,0 +1,257 @@
+.product-item-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 580px; /* Fixed height to maintain balance */
+  display: flex;
+  flex-direction: column;
+}
+
+.product-item-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Header */
+.product-header {
+  background: #4a4a4a;
+  color: white;
+  padding: 12px 16px;
+  text-align: center;
+}
+
+.product-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Image Container */
+.product-image-container {
+  padding: 20px;
+  text-align: center;
+  background: #f9f9f9;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+/* Price Section */
+.price-section {
+  padding: 16px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.current-price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #e74c3c;
+  margin-bottom: 8px;
+}
+
+.price-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.savings {
+  color: #27ae60;
+  font-weight: 500;
+}
+
+.mrp {
+  color: #7f8c8d;
+  text-decoration: line-through;
+}
+
+.tax-info {
+  color: #7f8c8d;
+  font-size: 12px;
+}
+
+/* Tabs */
+.product-tabs {
+  display: flex;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tab {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background: #f8f9fa;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.tab.active {
+  background: white;
+  color: #e74c3c;
+  border-bottom: 2px solid #e74c3c;
+  font-weight: 600;
+}
+
+.tab:hover:not(.active) {
+  background: #e9ecef;
+}
+
+/* Tab Content - Fixed Height */
+.tab-content {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 200px; /* Fixed height for content area */
+  overflow-y: auto; /* Allow scrolling if content is too long */
+}
+
+/* Specifications */
+.specifications {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+}
+
+.spec-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.spec-row:last-child {
+  border-bottom: none;
+}
+
+.spec-label {
+  font-weight: 500;
+  color: #2c3e50;
+  flex: 0 0 40%;
+  font-size: 14px;
+}
+
+.spec-value {
+  color: #34495e;
+  flex: 1;
+  text-align: right;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Overview Content */
+.overview-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.overview-text {
+  color: #34495e;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  text-align: justify;
+  overflow-y: auto;
+  padding-right: 5px; /* Space for scrollbar if needed */
+}
+
+/* Custom scrollbar for overview */
+.overview-text::-webkit-scrollbar {
+  width: 4px;
+}
+
+.overview-text::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 2px;
+}
+
+.overview-text::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 2px;
+}
+
+.overview-text::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Action Buttons */
+.action-buttons {
+  display: flex;
+  margin-top: auto;
+}
+
+.view-btn {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  background: #e74c3c;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.view-btn:hover {
+  background: #c0392b;
+}
+
+.add-to-cart-btn {
+  flex: 1;
+  padding: 14px;
+  border: none;
+  background: #7f8c8d;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.add-to-cart-btn:hover {
+  background: #6c7b7d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-item-card {
+    margin-bottom: 20px;
+    height: auto; /* Allow flexible height on mobile */
+  }
+  
+  .tab-content {
+    height: auto; /* Remove fixed height on mobile */
+    min-height: 180px; /* Minimum height to maintain some consistency */
+  }
+  
+  .spec-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .spec-label {
+    flex: none;
+  }
+  
+  .spec-value {
+    text-align: left;
+  }
+  
+  .action-buttons {
+    flex-direction: column;
+  }
+}

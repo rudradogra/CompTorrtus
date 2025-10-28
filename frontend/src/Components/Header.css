@@ -7,11 +7,18 @@
   width: 100%;
 }
 
+.top-bar {
+  background-color: #f8f9fa;
+  padding: 8px 20px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .social-icons {
   display: flex;
   gap: 10px;
-  padding: 8px 20px;
-  background-color: #fff;
 }
 
 .social-icons a {
@@ -26,15 +33,54 @@
   background-color: #f0f0f0;
 }
 
-.top-bar {
-  background-color: #f8f9fa;
-  padding: 8px 20px;
-  border-bottom: 1px solid #e0e0e0;
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.social-icon.facebook {
+  color: #1877f2;
+}
+
+.social-icon.facebook:hover {
+  background-color: #1877f2;
+  color: white;
+}
+
+.social-icon.instagram {
+  color: #E4405F;
+}
+
+.social-icon.instagram:hover {
+  background-color: #E4405F;
+  color: white;
+}
+
+.social-icon.youtube {
+  color: #FF0000;
+}
+
+.social-icon.youtube:hover {
+  background-color: #FF0000;
+  color: white;
+}
+
+.social-icon.whatsapp {
+  color: #25D366;
+}
+
+.social-icon.whatsapp:hover {
+  background-color: #25D366;
+  color: white;
 }
 
 .contact-info {
   display: flex;
-  justify-content: flex-end;
   gap: 20px;
   font-size: 12px;
   color: #666;
